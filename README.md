@@ -6,6 +6,8 @@ A simple TypeScript project that displays "Hello Academy!" in the browser.
 
 ```
 academy-project-2026/
+├── public/
+│   └── favicon.ico      # Site icon
 ├── src/
 │   ├── main.scss        # SCSS source file
 │   ├── main.ts          # TypeScript source file
