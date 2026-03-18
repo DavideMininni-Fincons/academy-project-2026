@@ -37,27 +37,13 @@ academy-project-2026/
    npm run watch
    ```
 
-   You can also build them separately:
-   ```bash
-   npm run build:ts    # TypeScript only
-   npm run build:css   # SCSS only
-   ```
-
 3. Open `src/index.html` in your browser to see the result!
-
-## SCSS Features
-
-The project now includes SCSS support with:
-- Variables for colors and common values
-- Mixins for reusable styles
-- Nested selectors
-- Hover effects and transitions
-
-Edit `src/main.scss` to customize the styling!
 
 ## How It Works
 
 - `src/main.ts` contains the TypeScript code with a `sayHello()` function
-- TypeScript compiler (`tsc`) compiles it to JavaScript in the `dist/` folder
-- `index.html` imports the compiled JavaScript as an ES module
+- `src/styles.scss` contains the SCSS code with the style rules
+- TypeScript compiler (`tsc`) compiles TypeScript to JavaScript in the `dist/` folder
+- Sass compiler (`sass`) compiles SCSS to CSS in the `dist/` folder
+- `index.html` imports the compiled JavaScript as an ES module and the styles
 - When the page loads, it displays "Hello World!" in the app container
