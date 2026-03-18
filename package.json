@@ -1,43 +1,17 @@
 {
   "name": "academy-project-2026",
   "version": "0.0.0",
+  "main": "dist/main.js",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
-  },
-  "private": true,
-  "packageManager": "npm@11.6.1",
-  "dependencies": {
-    "@angular/common": "^21.0.0",
-    "@angular/compiler": "^21.0.0",
-    "@angular/core": "^21.0.0",
-    "@angular/forms": "^21.0.0",
-    "@angular/platform-browser": "^21.0.0",
-    "@angular/router": "^21.0.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "build": "npm run build:css && npm run build:ts",
+    "build:css": "sass src/styles.scss dist/styles.css",
+    "build:ts": "tsc",
+    "watch": "npm run watch:css & npm run watch:ts",
+    "watch:css": "sass --watch src/styles.scss:dist/styles.css",
+    "watch:ts": "tsc --watch"
   },
   "devDependencies": {
-    "@angular/build": "^21.0.1",
-    "@angular/cli": "^21.0.1",
-    "@angular/compiler-cli": "^21.0.0",
-    "jsdom": "^27.1.0",
-    "typescript": "~5.9.2",
-    "vitest": "^4.0.8"
+    "typescript": "^5.3.3",
+    "sass": "^1.69.5"
   }
 }

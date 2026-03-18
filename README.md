@@ -1,59 +1,61 @@
 # AcademyProject2026
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+A simple TypeScript project that displays "Hello Academy!" in the browser.
 
-## Development server
+## Project Structure
 
-To start a local development server, run:
-
-```bash
-ng serve
+```
+academy-project-2026/
+├── src/
+│   ├── main.scss        # SCSS source file
+│   ├── main.ts          # TypeScript source file
+│   └── index.html       # HTML entry point
+├── dist/                # Compiled output (generated)
+│   ├── main.css         # Compiled CSS
+│   └── main.js          # Compiled JavaScript
+├── package.json         # Project dependencies
+├── tsconfig.json        # TypeScript configuration
+└── README.md
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Setup
 
-## Code scaffolding
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. Compile TypeScript and SCSS:
+   ```bash
+   npm run build
+   ```
 
-```bash
-ng generate component component-name
-```
+   Or watch for changes (runs both TypeScript and SCSS watchers):
+   ```bash
+   npm run watch
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   You can also build them separately:
+   ```bash
+   npm run build:ts    # TypeScript only
+   npm run build:css   # SCSS only
+   ```
 
-```bash
-ng generate --help
-```
+3. Open `src/index.html` in your browser to see the result!
 
-## Building
+## SCSS Features
 
-To build the project run:
+The project now includes SCSS support with:
+- Variables for colors and common values
+- Mixins for reusable styles
+- Nested selectors
+- Hover effects and transitions
 
-```bash
-ng build
-```
+Edit `src/main.scss` to customize the styling!
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## How It Works
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- `src/main.ts` contains the TypeScript code with a `sayHello()` function
+- TypeScript compiler (`tsc`) compiles it to JavaScript in the `dist/` folder
+- `index.html` imports the compiled JavaScript as an ES module
+- When the page loads, it displays "Hello World!" in the app container
