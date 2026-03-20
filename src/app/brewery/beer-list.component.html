@@ -1,1 +1,15 @@
-<p>Beer List works!</p>
+<div class="title-bar">
+    <h2>Beer List</h2>
+    <button>+ Add New</button>
+</div>
+
+<div class="card-container">
+    @for (beer of beers; track beer.id) {
+    <div class="beer-card">
+        <span class="name">{{ beer.beerName }}</span>
+        <span class="style">{{ beer.beerStyle }}</span>
+        <span>€ {{ beer.price }}</span>
+        <span class="date">{{ beer.lastModifiedDate | date:'short' }}</span>
+    </div>
+    }
+</div>
