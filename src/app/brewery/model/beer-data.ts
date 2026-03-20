@@ -1,4 +1,4 @@
-import { Beer, BeerStyle } from "./beer-model";
+import { Beer, BeerStyle } from './beer-model';
 
 export const BeersData: Array<Beer> = [
   {
