@@ -1,4 +1,3 @@
-
 export interface Beer {
   id: number;
   beerName: string;

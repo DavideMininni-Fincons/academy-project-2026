@@ -3,11 +3,11 @@ import { BeersData } from './model/beer-data';
 import { DatePipe } from '@angular/common';
 
 @Component({
-    selector: 'app-beer-list',
-    templateUrl: './beer-list.component.html',
-    styleUrl: './beer-list.component.scss',
-    imports: [DatePipe]
+  selector: 'app-beer-list',
+  templateUrl: './beer-list.component.html',
+  styleUrl: './beer-list.component.scss',
+  imports: [DatePipe],
 })
 export class BeerListComponent {
-    beers = BeersData;
+  beers = BeersData;
 }
