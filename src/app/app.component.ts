@@ -9,5 +9,5 @@ import { BeerListComponent } from './brewery/beer-list.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  protected readonly title = signal('Fincons Brewery');
+  protected readonly title = signal('Brewery');
 }
