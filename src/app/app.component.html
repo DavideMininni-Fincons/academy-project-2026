@@ -1,7 +1,10 @@
 <nav class="app-navbar">
-  <a class="app-brand" routerLink="/">{{ title() }}</a>
+  <a class="app-brand" routerLink="/">
+    <img src="fincons-logo.svg" alt="Fincons Logo" />
+    {{ title() }}
+  </a>
 </nav>
 <main>
   <!-- <router-outlet /> -->
-   <app-beer-list></app-beer-list>
+  <app-beer-list />
 </main>
