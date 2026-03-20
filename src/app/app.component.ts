@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BeerListComponent } from './brewery/beer-list.component';
+import { BeerListComponent } from './brewery/beer-list/beer-list.component';
 
 @Component({
   selector: 'app-root',

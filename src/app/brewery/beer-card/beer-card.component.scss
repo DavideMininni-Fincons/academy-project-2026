@@ -1,0 +1,63 @@
+.beer-card {
+  flex: 1 1 260px;
+  max-width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .name {
+    font-weight: 700;
+    color: #a00d24;
+  }
+
+  .style {
+    font-style: italic;
+    font-size: 0.75rem;
+    color: #888;
+  }
+
+  span {
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .date {
+    margin-top: auto;
+    padding-top: 0.8rem;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.75rem;
+    color: #999;
+  }
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.btn-delete {
+  background: #a00d24;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

@@ -1,0 +1,17 @@
+<div class="title-bar">
+  <h2>Beer List</h2>
+  <button>+ Add New</button>
+</div>
+<div class="card-container">
+  @for (beer of beers; track beer.id) {
+    <app-beer-card
+      [id]="beer.id"
+      [name]="beer.beerName"
+      [style]="beer.beerStyle"
+      [lastModifiedDate]="beer.lastModifiedDate"
+      [upc]="beer.upc"
+      [price]="beer.price"
+      (deleteClick)="deleteBeer($event)"
+    />
+  }
+</div>

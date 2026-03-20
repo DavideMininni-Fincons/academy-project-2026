@@ -1,0 +1,11 @@
+<div class="beer-card">
+  <span class="name">{{ name }}</span>
+  <span class="style">{{ style }}</span>
+  <span>{{ price | currency: 'EUR' : 'symbol' }}</span>
+  <span class="date">{{ lastModifiedDate | date: 'short' }}</span>
+  <div class="card-actions">
+    <button class="btn-delete" (click)="onDeleteClick()">
+      <i class="bi bi-trash"></i>
+    </button>
+  </div>
+</div>
