@@ -15,12 +15,12 @@ export class BeerService {
   }
 
   addBeer(beer: Beer) {
-    beer.id = BeerId++;
+    beer.beerId = BeerId++;
     this.beers.push(beer);
   }
 
   deleteBeer(beerId: number) {
-    const index = this.beers.findIndex((b) => b.id === beerId);
+    const index = this.beers.findIndex((b) => b.beerId === beerId);
     if (index !== -1) {
       this.beers.splice(index, 1);
     }
