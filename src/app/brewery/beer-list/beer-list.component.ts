@@ -12,10 +12,10 @@ export class BeerListComponent {
   beers = BeersData;
 
   deleteBeer(beerId: number) {
-    this.beers = this.beers.filter((b) => b.id !== beerId);
+    this.beers = this.beers.filter((b) => b.beerId !== beerId);
 
     //alternative:
-    // const index = this.beers.findIndex((b) => beerId === b.id);
+    // const index = this.beers.findIndex((b) => beerId === b.beerId);
     // this.beers.splice(index, 1);
   }
 }

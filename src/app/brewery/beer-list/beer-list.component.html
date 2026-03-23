@@ -3,9 +3,9 @@
   <button>+ Add New</button>
 </div>
 <div class="card-container">
-  @for (beer of beers; track beer.id) {
+  @for (beer of beers; track beer.beerId) {
     <app-beer-card
-      [id]="beer.id"
+      [id]="beer.beerId"
       [name]="beer.beerName"
       [style]="beer.beerStyle"
       [lastModifiedDate]="beer.lastModifiedDate"
