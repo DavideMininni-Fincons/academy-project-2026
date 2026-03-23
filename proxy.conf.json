@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://cb4p3r9tjj.execute-api.eu-west-1.amazonaws.com/v2",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
