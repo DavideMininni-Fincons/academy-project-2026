@@ -1,11 +1,13 @@
 export interface Beer {
-  id: number;
+  beerId: number;
   beerName: string;
   beerStyle: BeerStyle;
   upc: string;
   price: number;
+  quantityOnHand: number;
   createdDate: Date;
   lastModifiedDate: Date;
+  version: number;
 }
 
 export enum BeerStyle {
