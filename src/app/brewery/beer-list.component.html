@@ -4,7 +4,7 @@
 </div>
 
 <div class="card-container">
-  @for (beer of beers; track beer.id) {
+  @for (beer of beers; track beer.beerId) {
     <div class="beer-card">
       <span class="name">{{ beer.beerName }}</span>
       <span class="style">{{ beer.beerStyle }}</span>
