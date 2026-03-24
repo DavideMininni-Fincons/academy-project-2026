@@ -6,4 +6,5 @@ export const routes: Routes = [
   ...LESSON_ROUTES,
   { path: 'beers', component: BeerListComponent },
   { path: '', redirectTo: 'beers', pathMatch: 'full' },
+  { path: '**', redirectTo: 'beers' }
 ];
