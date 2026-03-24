@@ -1,0 +1,45 @@
+<section class="rxjs-lesson">
+  <h2>RxJS Observables</h2>
+  <p class="subtitle">Observable, subscribe, pipe operators, and error handling.</p>
+
+  <div class="rxjs-grid">
+    <article class="rxjs-card subscribe">
+      <h3>subscribe()</h3>
+      <p>Create an observable with <strong>of()</strong> and listen to the values:</p>
+      <pre><code>of(1, 2, 3).subscribe(v => ...)</code></pre>
+      <p class="result">{{ subscribeResult.join(', ') }}</p>
+    </article>
+
+    <article class="rxjs-card map">
+      <h3>map</h3>
+      <p>Transform each emitted value:</p>
+      <pre><code>pipe(map(v => v * 10))</code></pre>
+      <p class="result">{{ mapResult.join(', ') }}</p>
+    </article>
+
+    <article class="rxjs-card error">
+      <h3>catchError</h3>
+      <p>Catch an error in the stream:</p>
+      <pre><code>catchError(() => of(fallback))</code></pre>
+      <p class="result">{{ errorResult }}</p>
+    </article>
+
+    <article class="rxjs-card lazy">
+      <h3>Lazy: without subscribe</h3>
+      <p>An Observable <strong>does not emit anything</strong> until you have a subscriber:</p>
+      <pre><code>of(1,2,3) // no results</code></pre>
+      <p class="result">{{ lazyLog }}</p>
+    </article>
+
+    <article class="rxjs-card async">
+      <h3>async pipe</h3>
+      <p>Angular automatically subscribes/unsubscribes in the template:</p>
+      <pre><code>{{ '{{ post$ | async }}' }}</code></pre>
+      @if (post$ | async; as post) {
+        <p class="result">{{ post.title }}</p>
+      } @else {
+        <p class="result">Loading...</p>
+      }
+    </article>
+  </div>
+</section>

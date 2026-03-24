@@ -1,0 +1,89 @@
+{
+  "beers": [
+    {
+      "beerName": "Mango Bobs23",
+      "beerStyle": "ALE",
+      "upc": "0631234200036",
+      "price": 93.13,
+      "quantityOnHand": 10,
+      "beerId": 1
+    },
+    {
+      "beerId": 2,
+      "beerName": "Galaxy Cat",
+      "beerStyle": "PALE_ALE",
+      "upc": "9122089364369",
+      "price": 27.49,
+      "quantityOnHand": 20,
+      "createdDate": "2022-05-07T07:34:39.000Z",
+      "lastModifiedDate": "2022-05-07T07:34:39.000Z",
+      "version": 1
+    },
+    {
+      "beerId": 3,
+      "beerName": "No Hammers On The Bar",
+      "beerStyle": "WHEAT",
+      "upc": "0083783375213",
+      "price": 10.91,
+      "quantityOnHand": 15,
+      "createdDate": "2022-05-07T07:34:39.000Z",
+      "lastModifiedDate": "2022-05-07T07:34:39.000Z",
+      "version": 1
+    },
+    {
+      "beerId": 4,
+      "beerName": "Blessed",
+      "beerStyle": "STOUT",
+      "upc": "4666337557578",
+      "price": 53.71,
+      "quantityOnHand": 25,
+      "createdDate": "2022-05-07T07:34:39.000Z",
+      "lastModifiedDate": "2022-05-07T07:34:39.000Z",
+      "version": 1
+    },
+    {
+      "beerId": 5,
+      "beerName": "Adjunct Trail",
+      "beerStyle": "STOUT",
+      "upc": "8380495518610",
+      "price": 7.7,
+      "quantityOnHand": 5,
+      "createdDate": "2022-05-07T07:34:39.000Z",
+      "lastModifiedDate": "2022-05-07T07:34:39.000Z",
+      "version": 1
+    },
+    {
+      "beerId": 6,
+      "beerName": "Very Greenn",
+      "beerStyle": "IPA",
+      "upc": "5677465691934",
+      "price": 30.43,
+      "quantityOnHand": 8,
+      "createdDate": "2022-05-07T07:34:39.000Z",
+      "lastModifiedDate": "2022-05-07T07:34:39.000Z",
+      "version": 1
+    },
+    {
+      "beerId": 7,
+      "beerName": "Double Barrel Hunahpu's",
+      "beerStyle": "STOUT",
+      "upc": "5463533082885",
+      "price": 39.6,
+      "quantityOnHand": 12,
+      "createdDate": "2022-05-07T07:34:39.000Z",
+      "lastModifiedDate": "2022-05-07T07:34:39.000Z",
+      "version": 1
+    },
+    {
+      "beerId": 8,
+      "beerName": "Very Hazy",
+      "beerStyle": "IPA",
+      "upc": "5339741428398",
+      "price": 93.14,
+      "quantityOnHand": 0,
+      "createdDate": "2022-05-07T07:34:39.000Z",
+      "lastModifiedDate": "2022-05-07T07:34:39.000Z",
+      "version": 1
+    }
+  ]
+}

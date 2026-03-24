@@ -1,0 +1,39 @@
+<section class="binding-lesson">
+  <h2>Angular Data Binding</h2>
+  <p class="subtitle">Visual summary of the 4 core binding types.</p>
+
+  <div class="binding-grid">
+    <article class="binding-card interpolation">
+      <h3>Interpolation</h3>
+      <p>Template reads component value:</p>
+      <code>{{ '{{ interpolation }}' }}</code>
+      <p class="result">
+        Result: <strong>{{ interpolation }}</strong>
+      </p>
+    </article>
+
+    <article class="binding-card property">
+      <h3>Property Binding</h3>
+      <p>Component value sets DOM property:</p>
+      <code>[value]="propertyBinding"</code>
+      <input [value]="propertyBinding" />
+    </article>
+
+    <article class="binding-card event">
+      <h3>Event Binding</h3>
+      <p>DOM event calls component method:</p>
+      <code>(click)="increment()"</code>
+      <button (click)="increment()">Clicked {{ clickCount }} times</button>
+    </article>
+
+    <article class="binding-card two-way">
+      <h3>Two-way Binding</h3>
+      <p>Input and component stay in sync:</p>
+      <code>[(ngModel)]="twoWayBinding"</code>
+      <input [(ngModel)]="twoWayBinding" />
+      <p class="result">
+        Live value: <strong>{{ twoWayBinding }}</strong>
+      </p>
+    </article>
+  </div>
+</section>

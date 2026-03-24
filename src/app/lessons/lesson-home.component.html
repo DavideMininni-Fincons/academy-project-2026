@@ -1,0 +1,9 @@
+<section class="lesson-home">
+  <h1>Angular Lesson Playground</h1>
+
+  <div class="grid">
+    @for (lesson of lessons; track lesson.path) {
+      <a [routerLink]="lesson.path" class="card">{{ lesson.label }}</a>
+    }
+  </div>
+</section>

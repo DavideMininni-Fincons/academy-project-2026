@@ -1,0 +1,40 @@
+@mixin lesson-shell($max-width: 960px) {
+  max-width: $max-width;
+}
+
+@mixin lesson-subtitle {
+  margin-top: 0;
+  color: #555;
+}
+
+@mixin lesson-grid($min-width: 280px, $gap: 1rem, $margin-top: 1rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+  gap: $gap;
+  margin-top: $margin-top;
+}
+
+@mixin lesson-card($padding: 1.4rem) {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+  padding: $padding;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+@mixin lesson-inline-code($font-size: 0.83rem, $margin-bottom: 0.6rem) {
+  display: inline-block;
+  margin-bottom: $margin-bottom;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  background: #f3f4f6;
+  font-size: $font-size;
+}
+
+@mixin lesson-result($font-size: 0.9rem, $margin-top: 0.55rem) {
+  margin-top: $margin-top;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  background: #f9fafb;
+  font-size: $font-size;
+}

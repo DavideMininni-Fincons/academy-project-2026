@@ -1,0 +1,79 @@
+@use '../lesson-shared' as shared;
+
+.lifecycle-lesson {
+  @include shared.lesson-shell();
+}
+
+.subtitle {
+  @include shared.lesson-subtitle;
+}
+
+.lifecycle-grid {
+  @include shared.lesson-grid();
+}
+
+.lifecycle-card {
+  @include shared.lesson-card();
+
+  h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0.25rem 0 0.65rem;
+    font-size: 0.94rem;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background: #2563eb;
+  }
+
+  button + button {
+    margin-top: 0.6rem;
+  }
+
+  .secondary {
+    background: #334155;
+  }
+
+  .result {
+    @include shared.lesson-result();
+  }
+
+  .hint {
+    margin-top: 0.6rem;
+    color: #6b7280;
+    font-size: 0.85rem;
+  }
+
+  .empty {
+    margin: 0.2rem 0 0;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e1;
+    color: #475569;
+    background: #f8fafc;
+  }
+}
+
+.controls {
+  border-top: 4px solid #2563eb;
+}
+
+.state {
+  border-top: 4px solid #0f766e;
+}
+
+.child-view {
+  border-top: 4px solid #b45309;
+}

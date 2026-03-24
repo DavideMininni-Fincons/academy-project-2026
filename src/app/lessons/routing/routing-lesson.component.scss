@@ -1,0 +1,151 @@
+@use '../lesson-shared' as shared;
+
+.routing-lesson {
+  @include shared.lesson-shell(1200px);
+}
+
+.subtitle {
+  @include shared.lesson-subtitle;
+}
+
+.routing-grid {
+  @include shared.lesson-grid(340px);
+}
+
+.routing-card {
+  @include shared.lesson-card();
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.94rem;
+    color: #444;
+  }
+
+  code {
+    display: inline-block;
+    max-width: 100%;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    background: #f3f4f6;
+    font-size: 0.83rem;
+    word-break: break-all;
+    white-space: normal;
+  }
+}
+
+.snippet {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.83rem;
+  overflow-x: auto;
+
+  code {
+    background: none;
+    padding: 0;
+    word-break: normal;
+    white-space: pre;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.btn {
+  flex: 1;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.url-hint {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  code {
+    background: none;
+    padding: 0;
+    font-size: 0.8rem;
+    word-break: normal;
+    white-space: nowrap;
+  }
+}
+
+// Path Param card — amber
+.path {
+  border-top: 4px solid #b45309;
+
+  .btn-path {
+    background: #b45309;
+
+    &:hover {
+      background: #92400e;
+    }
+  }
+}
+
+// Query Param card — violet
+.query {
+  border-top: 4px solid #7c3aed;
+
+  .btn-query {
+    background: #7c3aed;
+
+    &:hover {
+      background: #6d28d9;
+    }
+  }
+}
+
+// Summary card — slate
+.summary {
+  border-top: 4px solid #475569;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.7rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  font-size: 0.92rem;
+}
+
+.label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.path-label {
+  background: #b45309;
+}
+
+.query-label {
+  background: #7c3aed;
+}

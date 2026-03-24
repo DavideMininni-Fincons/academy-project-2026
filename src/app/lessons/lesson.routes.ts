@@ -1,0 +1,29 @@
+import { Routes } from '@angular/router';
+import { LessonHomeComponent } from './lesson-home.component';
+import { DataBindingLessonComponent } from './data-binding/data-binding-lesson.component';
+import { InputOutputLessonComponent } from './input-output/input-output-lesson.component';
+import { RoutingLessonComponent } from './routing/routing-lesson.component';
+import { RxjsLessonComponent } from './rxjs/rxjs-lesson.component';
+import { SignalsLessonComponent } from './signals/signals-lesson.component';
+import { DiLessonComponent } from './dependency-injection/di-lesson.component';
+import { LifecycleLessonComponent } from './lifecycle-hooks/lifecycle-lesson.component';
+import { ChangeDetectionLessonComponent } from './change-detection/change-detection-lesson.component';
+import { DirectivesLessonComponent } from './directives/directives-lesson.component';
+import { PipesLessonComponent } from './pipes/pipes-lesson.component';
+import { FormsLessonComponent } from './forms/forms-lesson.component';
+
+export const LESSON_ROUTES: Routes = [
+  { path: 'lessons', component: LessonHomeComponent },
+  { path: 'lessons/data-binding', component: DataBindingLessonComponent },
+  { path: 'lessons/input-output', component: InputOutputLessonComponent },
+  { path: 'lessons/routing', component: RoutingLessonComponent },
+  { path: 'lessons/routing/:type', component: RoutingLessonComponent },
+  { path: 'lessons/rxjs', component: RxjsLessonComponent },
+  { path: 'lessons/signals', component: SignalsLessonComponent },
+  { path: 'lessons/di', component: DiLessonComponent },
+  { path: 'lessons/lifecycle', component: LifecycleLessonComponent },
+  { path: 'lessons/change-detection', component: ChangeDetectionLessonComponent },
+  { path: 'lessons/directives', component: DirectivesLessonComponent },
+  { path: 'lessons/pipes', component: PipesLessonComponent },
+  { path: 'lessons/forms', component: FormsLessonComponent },
+];
