@@ -1,0 +1,31 @@
+.lesson-home {
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-top: 0;
+    color: #555;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  display: block;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #222;
+  background: #fff;
+
+  &:hover {
+    border-color: #a00d24;
+  }
+}

@@ -1,0 +1,72 @@
+@use '../lesson-shared' as shared;
+
+.binding-lesson {
+  @include shared.lesson-shell(900px);
+}
+
+.subtitle {
+  @include shared.lesson-subtitle;
+}
+
+.binding-grid {
+  @include shared.lesson-grid();
+}
+
+.binding-card {
+  @include shared.lesson-card(2rem);
+
+  h3 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0.25rem 0 0.65rem;
+  }
+
+  code {
+    display: inline-block;
+    margin-bottom: 0.65rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    background: #f3f4f6;
+    font-size: 0.85rem;
+  }
+
+  input,
+  button {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid #cfd4dc;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  button {
+    cursor: pointer;
+    background: #a00d24;
+    color: #fff;
+    border: none;
+  }
+
+  .result {
+    margin-top: 0.7rem;
+  }
+}
+
+.interpolation {
+  border-top: 4px solid #2563eb;
+}
+
+.property {
+  border-top: 4px solid #0f766e;
+}
+
+.event {
+  border-top: 4px solid #b45309;
+}
+
+.two-way {
+  border-top: 4px solid #7c3aed;
+}

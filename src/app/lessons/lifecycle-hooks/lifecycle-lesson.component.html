@@ -1,0 +1,35 @@
+<section class="lifecycle-lesson">
+  <h2>Lifecycle Hooks</h2>
+  <p class="subtitle">
+    Observe the main hooks of the child: creation, input update, and destruction.
+  </p>
+
+  <div class="lifecycle-grid">
+    <article class="lifecycle-card controls">
+      <h3>Actions</h3>
+      <p>Use the controls to simulate child update and mount/unmount.</p>
+      <button (click)="increase()">Change @Input value</button>
+      <button class="secondary" (click)="showChild = !showChild">Toggle child</button>
+    </article>
+
+    <article class="lifecycle-card state">
+      <h3>Parent State</h3>
+      <p class="result">
+        value: <strong>{{ value }}</strong>
+      </p>
+      <p class="result">
+        child mounted: <strong>{{ showChild ? 'yes' : 'no' }}</strong>
+      </p>
+      <p class="hint">Open the console to see the order of hooks.</p>
+    </article>
+
+    <article class="lifecycle-card child-view">
+      <h3>Child</h3>
+      @if (showChild) {
+        <app-lifecycle-child [value]="value" />
+      } @else {
+        <p class="empty">Child not mounted (destroyed).</p>
+      }
+    </article>
+  </div>
+</section>

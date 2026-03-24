@@ -1,0 +1,138 @@
+@use '../lesson-shared' as shared;
+
+.signals-lesson {
+  @include shared.lesson-shell(1000px);
+}
+
+.subtitle {
+  @include shared.lesson-subtitle;
+}
+
+.signals-grid {
+  @include shared.lesson-grid();
+}
+
+.signal-card {
+  @include shared.lesson-card(2rem);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0.25rem 0 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  code {
+    display: inline-block;
+    margin-bottom: 0.65rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    background: #f3f4f6;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+  }
+
+  button {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #cfd4dc;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .result {
+    margin-top: 0.7rem;
+    padding: 0.6rem;
+    border-radius: 8px;
+    background: #f9fafb;
+    font-size: 0.9rem;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  .hint {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+  }
+}
+
+.signal {
+  border-top: 4px solid #1e40af;
+
+  button {
+    background: #1e40af;
+    color: #fff;
+
+    &:hover {
+      background: #1e3a8a;
+    }
+  }
+}
+
+.computed {
+  border-top: 4px solid #059669;
+
+  button {
+    background: #059669;
+    color: #fff;
+
+    &:hover {
+      background: #047857;
+    }
+  }
+}
+
+.input {
+  border-top: 4px solid #7c3aed;
+
+  button {
+    background: #7c3aed;
+    color: #fff;
+
+    &:hover {
+      background: #6d28d9;
+    }
+  }
+}
+
+.output {
+  border-top: 4px solid #d97706;
+
+  button {
+    background: #d97706;
+    color: #fff;
+
+    &:hover {
+      background: #b45309;
+    }
+  }
+}
+
+.effect {
+  border-top: 4px solid #dc2626;
+
+  button {
+    background: #dc2626;
+    color: #fff;
+
+    &:hover {
+      background: #b91c1c;
+    }
+  }
+}

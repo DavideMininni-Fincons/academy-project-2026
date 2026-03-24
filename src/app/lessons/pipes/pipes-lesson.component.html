@@ -1,0 +1,37 @@
+<section class="pipes-lesson">
+  <h2>Pipes</h2>
+  <p class="subtitle">Transforms values in the template without modifying the original data.</p>
+
+  <div class="pipes-grid">
+    <article class="pipe-card source">
+      <h3>Original value</h3>
+      <p>Initial property of the component:</p>
+      <code>beerName = '{{ beerName }}'</code>
+      <p class="result">{{ beerName }}</p>
+    </article>
+
+    <article class="pipe-card text">
+      <h3>Text Pipes</h3>
+      <p>Transforms strings:</p>
+      <code>uppercase | lowercase | capitalize</code>
+      <p class="result">Uppercase: {{ beerName | uppercase }}</p>
+      <p class="result">Lowercase: {{ beerName | lowercase }}</p>
+      <p class="result">Capitalize: {{ beerName | capitalize }}</p>
+    </article>
+
+    <article class="pipe-card format">
+      <h3>Formatting Pipes</h3>
+      <p>Formats numbers and dates:</p>
+      <code>currency | date</code>
+      <p class="result">Currency: {{ price | currency: 'EUR' : 'symbol' }}</p>
+      <p class="result">Date: {{ today | date: 'short' }}</p>
+    </article>
+
+    <article class="pipe-card json">
+      <h3>Json Pipe</h3>
+      <p>Useful for quick debugging in the template:</p>
+      <code>{{ '{{ beer | json }}' }}</code>
+      <pre class="json-box">{{ beer | json }}</pre>
+    </article>
+  </div>
+</section>
