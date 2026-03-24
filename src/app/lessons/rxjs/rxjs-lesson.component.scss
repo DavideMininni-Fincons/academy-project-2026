@@ -1,0 +1,70 @@
+@use '../lesson-shared' as shared;
+
+.rxjs-lesson {
+  @include shared.lesson-shell(1000px);
+}
+
+.subtitle {
+  @include shared.lesson-subtitle;
+}
+
+.rxjs-grid {
+  @include shared.lesson-grid();
+}
+
+.rxjs-card {
+  @include shared.lesson-card(1.5rem);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  pre {
+    margin: 0;
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    overflow-x: auto;
+  }
+
+  code {
+    font-size: 0.83rem;
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+  }
+
+  .result {
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    background: #f9fafb;
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.5;
+    word-break: break-word;
+    margin-top: auto;
+  }
+}
+
+.subscribe { border-top: 4px solid #2563eb; }
+.map       { border-top: 4px solid #059669; }
+.filter    { border-top: 4px solid #d97706; }
+.error     { border-top: 4px solid #dc2626; }
+.lazy      { border-top: 4px solid #6b7280; }
+.http      { border-top: 4px solid #7c3aed; }
+.async     { border-top: 4px solid #0891b2; }

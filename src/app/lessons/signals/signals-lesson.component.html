@@ -1,0 +1,37 @@
+<section class="signals-lesson">
+  <h2>Angular Signals</h2>
+  <p class="subtitle">
+    Modern reactive state management with signals, computed values, and effects.
+  </p>
+
+  <div class="signals-grid">
+    <article class="signal-card signal">
+      <h3>signal()</h3>
+      <p>Create reactive state:</p>
+      <code>count = signal(0)</code>
+      <button (click)="increment()">Increment: {{ count() }}</button>
+      <p class="result">
+        Current value: <strong>{{ count() }}</strong>
+      </p>
+    </article>
+
+    <article class="signal-card computed">
+      <h3>computed()</h3>
+      <p>Derive values from signals:</p>
+      <code>doubleCount = computed()</code>
+      <p class="result">
+        Original: <strong>{{ count() }}</strong
+        ><br />
+        Double: <strong>{{ doubleCount() }}</strong>
+      </p>
+    </article>
+
+    <article class="signal-card effect">
+      <h3>effect()</h3>
+      <p>Trigger side effects on changes:</p>
+      <code>effect(() => {{ '{' }} ... {{ '}' }})</code>
+      <p class="result">{{ effectLog }}</p>
+      <p class="hint">Open browser console to see logs.</p>
+    </article>
+  </div>
+</section>

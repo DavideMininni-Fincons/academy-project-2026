@@ -1,0 +1,106 @@
+@use '../lesson-shared' as shared;
+
+.cd-lesson {
+  @include shared.lesson-shell();
+}
+
+.subtitle {
+  @include shared.lesson-subtitle;
+}
+
+.cd-grid {
+  @include shared.lesson-grid();
+}
+
+.cd-card {
+  @include shared.lesson-card();
+
+  h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0.25rem 0 0.65rem;
+    font-size: 0.94rem;
+  }
+
+  code {
+    @include shared.lesson-inline-code(0.83rem, 0);
+  }
+
+  button {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #cfd4dc;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+  }
+
+  button + button {
+    margin-top: 0.5rem;
+  }
+}
+
+.parent-state {
+  border-top: 4px solid #2563eb;
+}
+
+.actions {
+  border-top: 4px solid #b45309;
+
+  button:first-of-type {
+    background: #9a3412;
+  }
+
+  button:nth-of-type(2) {
+    background: #1d4ed8;
+  }
+
+  button:last-of-type {
+    background: #0f766e;
+  }
+
+  .hint {
+    margin-top: 0.6rem;
+    font-size: 0.84rem;
+    color: #6b7280;
+  }
+}
+
+.child-view {
+  border-top: 4px solid #7c3aed;
+}
+
+.child-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.7rem;
+}
+
+.child-box {
+  padding: 0.7rem;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px dashed #cbd5e1;
+}
+
+.strategy {
+  margin: 0 0 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.onpush-box {
+  border-color: #a78bfa;
+  background: #f5f3ff;
+}
+
+.default-box {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}

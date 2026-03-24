@@ -1,0 +1,38 @@
+<section class="cd-lesson">
+  <h2>Change Detection</h2>
+  <p class="subtitle">
+    OnPush updates the view when the reference changes, not with in-place mutations.
+  </p>
+
+  <div class="cd-grid">
+    <article class="cd-card parent-state">
+      <h3>Parent State</h3>
+      <p>
+        Items in the parent: <strong>{{ items.length }}</strong>
+      </p>
+      <code>items = ['A', 'B']</code>
+    </article>
+
+    <article class="cd-card actions">
+      <h3>Actions</h3>
+      <p>Try the two updates and observe the OnPush child.</p>
+      <button (click)="mutateInPlace()">Mutate in place (push)</button>
+      <button (click)="immutableUpdate()">Immutable update (new array)</button>
+    </article>
+
+    <article class="cd-card child-view">
+      <h3>Child Comparison</h3>
+      <p>Same input, different strategy:</p>
+      <div class="child-grid">
+        <div class="child-box onpush-box">
+          <p class="strategy">OnPush</p>
+          <app-cd-child [items]="items" />
+        </div>
+        <div class="child-box default-box">
+          <p class="strategy">Default (CheckAlways)</p>
+          <app-cd-child-default [items]="items" />
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="io-lesson">
+	<h2>Input / Output</h2>
+
+	<div class="parent-box">
+		<div class="box-label">Parent Component</div>
+
+		<div class="box-row">
+			<span class="token token-input">Input sent to child</span>
+			<code>{{ parentInput }}</code>
+		</div>
+
+		<div class="child-slot">
+			<app-io-child [input]="parentInput" (output)="onOutput($event)" />
+		</div>
+
+		<div class="box-row output-row">
+			<span class="token token-output">Output received from child</span>
+			<code>{{ event }}</code>
+		</div>
+	</div>
+</section>

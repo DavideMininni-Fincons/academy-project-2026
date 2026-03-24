@@ -1,0 +1,60 @@
+@use '../lesson-shared' as shared;
+
+.pipes-lesson {
+  @include shared.lesson-shell();
+}
+
+.subtitle {
+  @include shared.lesson-subtitle;
+}
+
+.pipes-grid {
+  @include shared.lesson-grid();
+}
+
+.pipe-card {
+  @include shared.lesson-card();
+
+  h3 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1rem;
+  }
+
+  p {
+    margin: 0.25rem 0 0.65rem;
+    font-size: 0.94rem;
+  }
+
+  code {
+    @include shared.lesson-inline-code();
+  }
+
+  .result {
+    @include shared.lesson-result(0.9rem, 0.5rem);
+  }
+}
+
+.source {
+  border-top: 4px solid #2563eb;
+}
+
+.text {
+  border-top: 4px solid #7c3aed;
+}
+
+.format {
+  border-top: 4px solid #0f766e;
+}
+
+.json {
+  border-top: 4px solid #b45309;
+}
+
+.json-box {
+  margin: 0;
+  padding: 0.6rem;
+  border-radius: 8px;
+  background: #f3f4f6;
+  font-size: 0.84rem;
+  overflow-x: auto;
+}
