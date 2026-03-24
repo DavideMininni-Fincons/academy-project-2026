@@ -1,0 +1,51 @@
+<section class="routing-lesson">
+  <h2>Routing</h2>
+  <p class="subtitle">
+    Compare between path param and query param: navigation from template and from TypeScript.
+  </p>
+
+  <div class="routing-grid">
+    <article class="routing-card path">
+      <h3>Path Param</h3>
+      <p>The value is part of the path — requires a route <code>:type</code>.</p>
+      <div class="snippet"><code>this.route.paramMap.get('type')</code></div>
+      <div class="actions">
+        <a [routerLink]="['/lessons/routing', 'via-template']" class="btn btn-path">
+          Via Template
+        </a>
+        <button class="btn btn-path" (click)="goToPathParamsRouting()">Via TypeScript</button>
+      </div>
+      <p class="url-hint"><code>/lessons/routing/via-template</code></p>
+    </article>
+
+    <article class="routing-card query">
+      <h3>Query Param</h3>
+      <p>The value is optional in the URL — no extra route is needed.</p>
+      <div class="snippet"><code>this.route.queryParamMap.get('queryType')</code></div>
+      <div class="actions">
+        <a
+          [routerLink]="['/lessons/routing']"
+          [queryParams]="{ queryType: 'via-template' }"
+          class="btn btn-query"
+        >
+          Via Template
+        </a>
+        <button class="btn btn-query" (click)="goToQueryParamsRouting()">Via TypeScript</button>
+      </div>
+      <p class="url-hint"><code>/lessons/routing?type=via-template</code></p>
+    </article>
+
+    <article class="routing-card summary">
+      <h3>Result</h3>
+      <p>Values read on URL change:</p>
+      <div class="result-row">
+        <span class="label path-label">path param</span>
+        <strong>{{ type }}</strong>
+      </div>
+      <div class="result-row">
+        <span class="label query-label">query param</span>
+        <strong>{{ queryType }}</strong>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<section class="directives-lesson">
+  <h2>Directives</h2>
+  <p class="subtitle">Base example with a structural directive and a custom directive.</p>
+
+  <div class="directives-grid">
+    <article class="directive-card structural">
+      <h3>Structural: &#64;if</h3>
+      <p>Shows or hides a block in the template.</p>
+      <code>&#64;if (showMessage) &#123; ... &#125;</code>
+      <button (click)="toggleMessage()">Toggle message</button>
+      @if (showMessage) {
+        <p class="result">Message visible with &#64;if.</p>
+      }
+    </article>
+
+    <article class="directive-card custom">
+      <h3>Custom Directive</h3>
+      <p>Separate directive applied with an attribute.</p>
+      <code>&lt;p appLessonHighlight&gt;...&lt;/p&gt;</code>
+      <p appLessonHighlight class="highlight-target">
+        Hover over here: the directive changes the background.
+      </p>
+    </article>
+  </div>
+</section>

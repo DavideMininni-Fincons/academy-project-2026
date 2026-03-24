@@ -1,0 +1,25 @@
+<section class="di-lesson">
+  <h2>Dependency Injection</h2>
+  <p class="subtitle">Inject services to share state and logic across components.</p>
+
+  <div class="di-grid">
+    <article class="di-card service-state">
+      <h3>Service State</h3>
+      <p>The service manages shared state:</p>
+      <code>private counter = signal(0)</code>
+      <p class="result">
+        Counter value: <strong>{{ current }}</strong>
+      </p>
+    </article>
+
+    <article class="di-card interaction">
+      <h3>Using Service Methods</h3>
+      <p>Call service methods from component:</p>
+      <code>this.counterService.increment()</code>
+      <button (click)="increment()">Increment Service</button>
+      <p class="result">
+        Updated: <strong>{{ current }}</strong>
+      </p>
+    </article>
+  </div>
+</section>

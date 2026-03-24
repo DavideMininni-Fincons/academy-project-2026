@@ -1,0 +1,85 @@
+<section class="forms-lesson">
+  <h2>Angular Forms</h2>
+  <p class="subtitle">Two approaches compared: Reactive Forms and Template-Driven Forms.</p>
+
+  <div class="forms-grid">
+    <!-- REACTIVE FORM -->
+    <article class="form-card reactive">
+      <div class="card-header">
+        <h3>Reactive Form</h3>
+        <span class="badge">FormBuilder</span>
+      </div>
+      <p class="description">
+        The form is defined in the <strong>TypeScript component</strong> using
+        <code>FormBuilder</code>. Full control over validation and state.
+      </p>
+
+      <form [formGroup]="form" (ngSubmit)="submitReactive()" class="form-body">
+        <div class="field">
+          <label>Beer name</label>
+          <input formControlName="name" placeholder="Es. Moretti" />
+          @if (form.get('name')?.invalid && form.get('name')?.touched) {
+            <span class="error">Mandatory name (min 2 characters)</span>
+          }
+        </div>
+
+        <div class="field">
+          <label>Style</label>
+          <select formControlName="style">
+            <option value="LAGER">LAGER</option>
+            <option value="IPA">IPA</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn" [disabled]="form.invalid">Submit</button>
+      </form>
+
+      @if (reactiveSubmitted) {
+        <p class="result">{{ reactiveSubmitted }}</p>
+      }
+    </article>
+
+    <!-- TEMPLATE-DRIVEN FORM -->
+    <article class="form-card template">
+      <div class="card-header">
+        <h3>Template-Driven Form</h3>
+        <span class="badge">ngModel</span>
+      </div>
+      <p class="description">
+        The form is defined in the <strong>HTML template</strong> using <code>ngModel</code>.
+        Simpler, less control.
+      </p>
+
+      <form #f="ngForm" (ngSubmit)="submitTemplate()" class="form-body">
+        <div class="field">
+          <label>Beer name</label>
+          <input
+            name="name"
+            [(ngModel)]="model.name"
+            required
+            minlength="2"
+            #nameCtrl="ngModel"
+            placeholder="Ex. Peroni"
+          />
+          @if (nameCtrl.invalid && nameCtrl.touched) {
+            <span class="error">Mandatory name (min 2 characters)</span>
+          }
+        </div>
+
+        <div class="field">
+          <label>Style</label>
+          <select name="style" [(ngModel)]="model.style" required>
+            <option value="LAGER">LAGER</option>
+            <option value="IPA">IPA</option>
+          </select>
+        </div>
+
+        <button type="submit" [disabled]="f.invalid" class="btn">Submit</button>
+      </form>
+
+      @if (templateSubmitted) {
+        <p class="result">{{ templateSubmitted }}</p>
+      }
+    </article>
+  </div>
+</section>

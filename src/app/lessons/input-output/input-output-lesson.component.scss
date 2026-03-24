@@ -1,0 +1,103 @@
+@use '../lesson-shared' as shared;
+
+.io-lesson {
+  @include shared.lesson-shell(760px);
+}
+
+.parent-box {
+  margin-top: 1rem;
+  border: 2px solid #a00d24;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fff7f8 0%, #ffffff 100%);
+  padding: 1.25rem;
+  box-shadow: 0 10px 24px rgba(160, 13, 36, 0.08);
+}
+
+.box-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: #a00d24;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.box-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.child-slot {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border-radius: 14px;
+  background: rgba(15, 92, 92, 0.05);
+}
+
+.token {
+  display: inline-block;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.token-input {
+  background: #e7f2ff;
+  color: #0e4c8a;
+}
+
+.token-output {
+  background: #e9f8ef;
+  color: #1d6b3c;
+}
+
+code {
+  background: #f3f4f6;
+  padding: 0.18rem 0.4rem;
+  border-radius: 6px;
+}
+
+.output-row {
+  margin-bottom: 0;
+}
+
+:host ::ng-deep .io-lesson .child-slot .child-box {
+  border: 2px dashed #0f5c5c;
+  border-radius: 12px;
+  background: #f4fbfb;
+  padding: 1rem;
+}
+
+:host ::ng-deep .io-lesson .child-slot .child-label {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #0f5c5c;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+:host ::ng-deep .io-lesson .child-slot p {
+  margin: 0 0 0.9rem 0;
+}
+
+:host ::ng-deep .io-lesson .child-slot code {
+  background: #e6f3f3;
+}
+
+:host ::ng-deep .io-lesson .child-slot button {
+  border: none;
+  border-radius: 8px;
+  background: #0f5c5c;
+  color: #fff;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+}
