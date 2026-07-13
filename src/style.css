@@ -1,148 +1,88 @@
 body {
-    font-family: Helvetica, sans-serif;
-    background: #d5f5e5;
-    padding: 40px;
-    color: #222;
-}
-
-h1 {
-    margin-bottom: 4px;
-}
-
-p {
-    color: #555;
-}
-
-.wrapper, .explanation {
-    display: flex;
-    gap: 2rem;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.explanation section {
-    width: 360px;
-}
-
-.card {
-    width: 320px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-}
-
-.card h2 {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    color: #888;
-    margin: 0 0 16px 0;
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.info h3 {
-    margin: 0 0 4px 0;
-    font-size: 16px;
-}
-
-.info p {
     margin: 0;
-    font-size: 13px;
-    color: #666;
+    min-height: 100vh;
+    background-color: #f5f7fb;
 }
 
-.btn {
-    padding: 6px 14px;
-    border: none;
-    border-radius: 6px;
-    background: #1daa64;
-    color: #fff;
-    font-size: 13px;
-    cursor: pointer;
-}
+.alert-box {
+    background-color: #d4edda;
+    border: 2px solid #2ecc71;
+    padding: 25px;
+    border-radius: 8px;
+    color: #155724;
+    width: 400px;
 
-/* POSITION */
+    /* Request 1 - Detach the box from the normal document flow. */
+    position: static;
 
-.row--pos {
-    position: ______;
-    height: 50px;
-}
-
-.avatar--pos {
-    position: ______;
+    /* Request 2 - Move the top-left corner of the box to the exact center of the screen. */
     top: 0;
     left: 0;
+
+    /* Request 3 - The box is now off-center because its anchor point is its corner. How can be centered? */
+    transform: none;
 }
 
-.info--pos {
-    position: ______;
-    top: 50%;
-    /* avatar width (50px) + gap (14px), by hand */
-    left: ______;
-    /* leaves room for the button on the right */
-    right: 90px;
-    /* classic trick to center vertically */
-    transform: translateY(-50%);
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #155724;
+    cursor: pointer;
+    opacity: 0.6;
+
+    /* Request 4 - Detach the button from the normal document flow. */
+    position: static;
+
+    /* Request 5 - Move the button to the top-right corner of the box (leave some space from the edges) */
+    top: auto;
+    right: auto;
 }
 
-.btn--pos {
-    position: ______;
-    top: ______;
-    right: 0;
-    /* same centering trick, repeated here too */
-    transform: ______;
+.close-btn:hover {
+    opacity: 1;
 }
 
-/* FLOAT */
-
-.row--float {
-    overflow: hidden;
+.alert-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 0 5px 0;
 }
 
-.avatar--float {
-    float: ______;
-    margin-right: 14px;
+.alert-message {
+    font-size: 16px;
+    margin: 0 0 15px 0;
 }
 
-.info--float {
-    float: ______;
-    /* fixed width, calculated by hand */
-    width: 160px;
+/* Request 6 - Change the text color of ALL <li> tags located exclusively inside the .alert-box. */
+______ {
+    color: #1c7430;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
-.btn--float {
-    float: ______;
-    /* guessed "by eye" to line up with the avatar */
-    margin-top: 13px;
+/* Request 7 - Make ONLY the FIRST item of the <li> list BOLD using a structural pseudo-class */
+______ {
+    font-weight: bold;
 }
 
-/* FLEX */
-
-.row--flex {
-    display: flex;
-    /* vertically centers avatar, text and button */
-    align-items: ______;
-    /* automatic spacing between items */
-    ______: 14px;
+/* Request 8. Give a base style to BOTH buttons inside the `.actions` div (use either a child or a descendant selector) */
+______ {
+    background-color: #155724;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
-.avatar--flex {
-    /* prevents the image from shrinking */
-    flex-shrink: 0;
+/* Request 9 - Change the background-color of the buttons when the user hovers over them with the mouse (state pseudo-class) */
+______ {
+    background-color: #1e7e34;
 }
 
-.info--flex {
-    /* takes up the remaining space automatically */
-    flex: ______;
-}
-
-.btn--flex {
-    /* redundant here, but makes the intent explicit */
-    align-self: center;
+/* Request 10 - Target ONLY the SECOND button inside `.actions` to give it a different color in order to distinguish it from the first button */
+______ {
+    background-color: #6c757d;
 }

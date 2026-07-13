@@ -8,76 +8,22 @@
   <script src="./script.js" type="module"></script>
 </head>
 <body>
-<h1>Position vs Float vs Flexbox</h1>
-<h2>Same result, three different techniques</h2>
-<p>The three cards below look identical on screen.</p>
-<p>
-  Each one arranges the same elements with a different layout technique:
-  <strong>position</strong>, <strong>float</strong> and <strong>flexbox</strong>.
-</p>
-<p>
-  Shared rules (avatar shape, text style, button style) live in common classes; only the layout-specific rules differ
-  between cards.
-</p>
+<div class="alert-box">
+  <button class="close-btn">&times;</button>
 
-<div class="wrapper">
-  <section class="card">
-    <h2>Card with Position</h2>
-    <div class="row row--pos">
-      <img class="avatar avatar--pos" src="https://picsum.photos/id/0/80" alt="avatar">
-      <div class="info info--pos">
-        <h3>John Smith</h3>
-        <p>Front-end developer, CSS enthusiast.</p>
-      </div>
-      <button class="btn btn--pos">Follow</button>
-    </div>
-  </section>
-  <section class="card">
-    <h2>Card with Float</h2>
-    <div class="row row--float">
-      <img class="avatar avatar--float" src="https://picsum.photos/id/0/80" alt="avatar">
-      <div class="info info--float">
-        <h3>John Smith</h3>
-        <p>Front-end developer, CSS enthusiast.</p>
-      </div>
-      <button class="btn btn--float">Follow</button>
-    </div>
-  </section>
-  <section class="card">
-    <h2>Card with Flexbox</h2>
-    <div class="row row--flex">
-      <img class="avatar avatar--flex" src="https://picsum.photos/id/0/80" alt="avatar">
-      <div class="info info--flex">
-        <h3>John Smith</h3>
-        <p>Front-end developer, CSS enthusiast.</p>
-      </div>
-      <button class="btn btn--flex">Follow</button>
-    </div>
-  </section>
-</div>
-<div class="explanation">
-  <section>
-    <h3>POSITION (relative / absolute)</h3>
-    <p>
-      The row gets a fixed height and `position: relative`, then every child is taken out of flow with `position:
-      absolute`
-      and placed by hand using top/left/right + a transform trick for vertical centering.
-    </p>
-  </section>
-  <section>
-    <h3>FLOAT</h3>
-    <p>
-      Elements are floated to sit in a row. Uses right or left as value for `float`.
-      Requires a clearfix on the row and a fixed width on the text block, plus a hand-guessed margin to vertically center the button.
-    </p>
-  </section>
-  <section>
-    <h3>FLEXBOX</h3>
-    <p>
-      Uses `display: flex` and `align-items` for vertical centering, `gap` handles spacing, `flex: 1` makes the text block adapt automatically.
-      No floats, no manual measurements.
-    </p>
-  </section>
+  <p class="alert-title">Success!</p>
+  <p class="alert-message">Your changes have been saved successfully.</p>
+
+  <ul>
+    <li>Database connection updated.</li>
+    <li>Cache cleared on the main server.</li>
+    <li>Notification email sent to admin.</li>
+  </ul>
+
+  <div class="actions">
+    <button>Undo</button>
+    <button>View Details</button>
+  </div>
 </div>
 </body>
 </html>
