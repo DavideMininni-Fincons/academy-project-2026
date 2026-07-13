@@ -1,17 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Angular Academy 2026</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <app-root></app-root>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Basics - Interactive Quiz</title>
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" type="module"></script>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>HTML Web Basics Quiz</h1>
+
+    <div id="quiz-box">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <div class="question" id="question-text"></div>
+
+        <div class="options-list" id="options-container"></div>
+
+        <div class="footer-controls">
+            <span id="question-counter"></span>
+            <button class="next-btn" id="next-button">Next Question</button>
+        </div>
+    </div>
+
+    <div id="result-box" class="score-container">
+        <h2>Quiz Completed!</h2>
+        <p>Your Final Score:</p>
+        <div class="score-number" id="final-score">0 / 0</div>
+        <p id="score-commentary"></p>
+        <button class="restart-btn" id="restart-button">Try Again</button>
+    </div>
+</div>
+</body>
 </html>
