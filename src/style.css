@@ -23,6 +23,24 @@ body {
     line-height: 1.6;
 }
 
+body.dark-theme {
+    --white: #0f172a;          /* Slate 900 (Dark Background) */
+    --bg-light: #1e293b;       /* Slate 800 */
+    --text-main: #f8fafc;      /* Light Text */
+    --text-muted: #94a3b8;     /* Muted Gray Text */
+    --border-color: #334155;   /* Darker borders */
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+    color: var(--text-main);
+}
+
 section {
     padding: 80px 20px;
     max-width: 1100px;
@@ -48,6 +66,7 @@ a:hover {
 header {
     background-color: var(--white);
     border-bottom: 1px solid var(--border-color);
+    border-radius: 0 0 16px 16px;
     padding: 20px;
     position: sticky;
     top: 0;
