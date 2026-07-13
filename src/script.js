@@ -1,6 +1,7 @@
 /**
  * Exercise note
  *
- * The index.html file is broken: tags are missing, or not closed, or the wrong ones are used.
- * Fix it.
+ * You're a web developer and need to complete the structure of a product page for an e-commerce site.
+ * The current code is just disorganized text.
+ * Follow the instructions to transform it into a structured page ready for styling via CSS rules.
  */
