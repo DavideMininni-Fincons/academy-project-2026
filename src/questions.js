@@ -1,92 +1,92 @@
 export const quizData = [
-    {
-        question: "Which HTML5 tag is the most appropriate to contain the primary, unique content of a webpage?",
-        options: ["<section>", "<main>", "<div>", "<article>"],
-        correct: 1
-    },
-    {
-        question: "How do you correctly connect a <label> to an <input> field for web accessibility?",
-        options: [
-            "By matching the label's 'for' attribute with the input's 'id' attribute",
-            "By putting the exact same text inside both tags",
-            "By matching the label's 'id' with the input's 'name'",
-            "HTML handles this automatically without any specific attributes"
-        ],
-        correct: 0
-    },
-    {
-        question: "Which attribute must be added to a link (<a>) to force it to open in a new browser tab?",
-        options: ["href='_blank'", "rel='new-tab'", "target='_blank'", "window='new'"],
-        correct: 2
-    },
-    {
-        question: "Which of the following is an inline HTML element by default?",
-        options: ["<div>", "<p>", "<span>", "<h1>"],
-        correct: 2
-    },
-    {
-        question: "What is the primary purpose of the 'alt' attribute inside an <img> tag?",
-        options: [
-            "To provide alternative text for screen readers and broken image links",
-            "To apply alternative CSS styles to the image",
-            "To change the alignment of the image on the screen",
-            "To add a tooltip when hovering over the image"
-        ],
-        correct: 0
-    },
-    {
-        question: "Which HTML tag is used to define an item in a list?",
-        options: ["<ul>", "<ol>", "<li>", "<list>"],
-        correct: 2
-    },
-    {
-        question: "What does the HTML element <br> do?",
-        options: [
-            "It creates a bold text block",
-            "It inserts a single line break without starting a new paragraph",
-            "It breaks the connection to the server",
-            "It creates a horizontal rule line"
-        ],
-        correct: 1
-    },
-    {
-        question: "Inside which HTML element do we put the metadata, such as the page title and character encoding?",
-        options: ["<body>", "<meta>", "<header>", "<head>"],
-        correct: 3
-    },
-    {
-        question: "Which HTML5 tag represents a self-contained composition in a document that could be independently distributable (e.g., a forum post or news item)?",
-        options: ["<article>", "<section>", "<aside>", "<nav>"],
-        correct: 0
-    },
-    {
-        question: "Which input type should you use if you want the user to pick only ONE option from a small group of choices?",
-        options: ["type='checkbox'", "type='radio'", "type='select'", "type='text'"],
-        correct: 1
-    },
-    {
-        question: "What is the correct HTML tag for inserting a background audio file or playable audio track?",
-        options: ["<sound>", "<music>", "<audio>", "<embed>"],
-        correct: 2
-    },
-    {
-        question: "Which attribute is used to pre-fill an <input type='text'> field with placeholder text that disappears when the user types?",
-        options: ["value", "hint", "placeholder", "text"],
-        correct: 2
-    },
-    {
-        question: "Which HTML element is used to display a nested webpage inside the current webpage?",
-        options: ["<embed>", "<object>", "<iframe>", "<frame>"],
-        correct: 2
-    },
-    {
-        question: "What is the correct HTML tag to define important text that should be rendered with strong psychological or visual importance (usually bold)?",
-        options: ["<important>", "<strong>", "<b>", "<bold>"],
-        correct: 1
-    },
-    {
-        question: "Which attribute is used within a <form> tag to specify where to send the form-data when a form is submitted?",
-        options: ["method", "action", "target", "href"],
-        correct: 1
-    }
+  {
+    question: "Which CSS property is used to make text bold?",
+    options: ["font-weight", "font-style", "text-transform", "text-decoration"],
+    correct: 0
+  },
+  {
+    question: "Which attribute selector targets an anchor (<a>) element only if it possesses a 'target' attribute, regardless of its assigned value?",
+    options: ["a.target", "a::target", "a[target]", "a:target"],
+    correct: 2
+  },
+  {
+    question: "How do you apply the same CSS styles to both <h1> and <p> elements at the same time?",
+    options: ["h1 p", "h1 + p", "h1, p", "h1 > p"],
+    correct: 2
+  },
+  {
+    question: "Which functional pseudo-class is used to match elements that do NOT match a list of specified selectors?",
+    options: [":except()", ":exclude()", ":without()", ":not()"],
+    correct: 3
+  },
+  {
+    question: "In a standard Flexbox layout container (row direction), which property is used to vertically align the items along the cross-axis?",
+    options: ["justify-content", "align-items", "vertical-align", "flex-pack"],
+    correct: 1
+  },
+  {
+    question: "Which CSS property is used to create rounded corners for an element?",
+    options: ["border-round", "corner-radius", "border-radius", "box-radius"],
+    correct: 2
+  },
+  {
+    question: "What is the correct CSS standard syntax convention used to differentiate a pseudo-element from a pseudo-class?",
+    options: [
+      "Pseudo-classes use a single colon (:), pseudo-elements use double colons (::)",
+      "Pseudo-classes use double colons (::), pseudo-elements use a single colon (:)",
+      "Pseudo-classes use a period (.), pseudo-elements use an hashtag (#)",
+      "There is no syntactic difference in modern CSS standards"
+    ],
+    correct: 0
+  },
+  {
+    question: "Which CSS property is strictly mandatory for a '::before' or '::after' pseudo-element to render visually on a webpage?",
+    options: ["display", "position", "width", "content"],
+    correct: 3
+  },
+  {
+    question: "Which property allows you to define clean layout spacing spacing between items inside a Grid or Flexbox container without modifying individual child margins?",
+    options: ["margin-space", "gap", "padding-distribution", "flex-spacing"],
+    correct: 1
+  },
+  {
+    question: "Which pseudo-class is used to style an element when the user hovers the mouse over it?",
+    options: [":active", ":focus", ":hover", ":visited"],
+    correct: 2
+  },
+  {
+    question: "An element configured with 'position: absolute;' computes its coordinate map adjustments relative to which boundary block?",
+    options: [
+      "Always relative to the root HTML <body> tag element boundary",
+      "The nearest ancestor element that has an active position property value other than 'static'",
+      "The nearest sibling element located directly next to it in the document object tree",
+      "Always relative to the initial browser window window viewport"
+    ],
+    correct: 1
+  },
+  {
+    question: "Which property is used to change the text color of an element in CSS?",
+    options: ["color", "text-color", "font-color", "content-color"],
+    correct: 0
+  },
+  {
+    question: "What is the main difference between 'display: none' and 'visibility: hidden'?",
+    options: [
+      "They do the exact same thing.",
+      "'display: none' hides the element but keeps its space; 'visibility: hidden' completely removes it.",
+      "'display: none' removes the element from the layout; 'visibility: hidden' hides it but leaves a blank space.",
+      "'visibility: hidden' only works on images and links."
+    ],
+    correct: 2
+  },
+  {
+    question: "Which of the following selectors has the highest specificity weight?",
+    options: ["button[active]:not(:disabled):hover", "#sidebar ", "*", "dialog:state(has-intermediate-element):has(h1:focus-visible)"],
+    correct: 1
+  },
+  {
+    question: "How do you center the text inside a paragraph (<p>) element?",
+    options: ["align: center", "content-align: center", "margin: center", "text-align: center"],
+    correct: 3
+  }
 ];
