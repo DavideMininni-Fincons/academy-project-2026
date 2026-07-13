@@ -8,9 +8,46 @@
   <script src="./script.js" defer></script>
 </head>
 <body>
-<div class="container">
-  <h1>Random Number Game</h1>
-  <button id="play-btn">Start Playing 🎮</button>
+<div class="calculator-card">
+  <h2>Payroll Control Panel</h2>
+
+  <form id="payroll-form">
+    <div class="form-group">
+      <label for="regular-hours">Regular Hours Worked:</label>
+      <input type="number" id="regular-hours" min="0" placeholder="e.g. 40" required>
+    </div>
+
+    <div class="form-group">
+      <label for="overtime-hours">Overtime Hours Worked:</label>
+      <input type="number" id="overtime-hours" min="0" placeholder="e.g. 8" required>
+    </div>
+
+    <div class="form-group">
+      <label for="holiday-hours">Holiday Hours Worked:</label>
+      <input type="number" id="holiday-hours" min="0" placeholder="e.g. 6" required>
+    </div>
+
+    <div class="form-group">
+      <label for="years-of-service">Years of Service:</label>
+      <input type="number" id="years-of-service" min="0" placeholder="e.g. 5" required>
+    </div>
+
+    <div class="form-group">
+      <label for="health-tier">Health Insurance Tier:</label>
+      <select id="health-tier" required>
+        <option value="" disabled selected>Choose a tier...</option>
+        <option value="1">Tier 1 ($30)</option>
+        <option value="2">Tier 2 ($60)</option>
+        <option value="3">Tier 3 ($90)</option>
+      </select>
+    </div>
+
+    <button type="submit" id="calculate-btn">Process Payroll 💸</button>
+  </form>
+
+  <div class="result-box">
+    <p>Final Net Payout: <strong id="net-pay-display">$0.00</strong></p>
+  </div>
 </div>
 </body>
 </html>
