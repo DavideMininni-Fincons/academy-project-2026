@@ -1,73 +1,5 @@
 const HOURLY_RATE = 25;
 
-function systemLogger(level, message) {
-  console.log(`[SYSTEM_${level}] -> ${message}`);
-}
-
-/**
- * Calculates standard pay based on regular hours only.
- */
-function calculateRegularPay(hours, rate) {
-  return hours * rate;
-}
-
-/**
- * Calculates overtime pay with a mandatory 1.5x multiplier.
- */
-function calculateOvertimePay(hours, rate) {
-  return hours * (rate * 1.5);
-}
-
-/**
- * Calculates holiday pay with a premium 2.5x multiplier.
- */
-function calculateHolidayPay(hours, rate) {
-  return hours * (rate * 2.5);
-}
-
-/**
- * Analyzes career seniority years to award scalable loyalty bonuses.
- */
-function applySeniorityBonus(currentPay, years) {
-  if (years >= 5) {
-    systemLogger('BONUS', 'Veteran bonus milestone hit (5+ years). Adding $100.');
-    return currentPay + 100;
-  } else if (years >= 2) {
-    systemLogger('BONUS', 'Standard bonus milestone hit (2+ years). Adding $40.');
-    return currentPay + 40;
-  }
-  return currentPay;
-}
-
-/**
- * Determines automated insurance deductions based on specific tier inputs.
- */
-function calculateInsuranceDeduction(tier) {
-  switch (tier) {
-    case 1:
-      return 30;
-    case 2:
-      return 60;
-    case 3:
-      return 90;
-    default:
-      return 0;
-  }
-}
-
-/**
- * Runs a progressive tax calculation model based on the generated revenue.
- */
-function calculateTaxAmount(taxableIncome) {
-  if (taxableIncome > 1000) {
-    return taxableIncome * 0.25;
-  }
-  if (taxableIncome > 600) {
-    return taxableIncome * 0.18;
-  }
-  return taxableIncome * 0.10;
-}
-
 document.getElementById('payroll-form').addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -77,27 +9,53 @@ document.getElementById('payroll-form').addEventListener('submit', (event) => {
   const yearsOfService = Number(document.getElementById('years-of-service').value);
   const healthPlanTier = Number(document.getElementById('health-tier').value);
 
-  systemLogger('INFO', '--- New Calculation Cycle Started ---');
+  console.log(`[SYSTEM_INFO] -> --- New Calculation Cycle Started ---`);
 
-  const baseRegularEarnings = calculateRegularPay(regularHours, HOURLY_RATE);
-  const baseOvertimeEarnings = calculateOvertimePay(overtimeHours, HOURLY_RATE);
-  const baseHolidayEarnings = calculateHolidayPay(holidayHours, HOURLY_RATE);
+  const baseRegularEarnings = regularHours * HOURLY_RATE;
+  const baseOvertimeEarnings = overtimeHours * (HOURLY_RATE * 1.5);
+  const baseHolidayEarnings = holidayHours * (HOURLY_RATE * 2.5);
 
   let totalSalary = baseRegularEarnings + baseOvertimeEarnings + baseHolidayEarnings;
-  systemLogger('INFO', 'Gross hours calculation: Reg=$' + baseRegularEarnings + ', OT=$' + baseOvertimeEarnings + ', Hol=$' + baseHolidayEarnings);
-  systemLogger('INFO', 'Total hours accumulated gross: $' + totalSalary);
+  console.log(`[SYSTEM_INFO] -> Gross hours calculation: Reg=$${baseRegularEarnings}, OT=$${baseOvertimeEarnings}, Hol=$${baseHolidayEarnings}`);
+  console.log(`[SYSTEM_INFO] -> Total hours accumulated gross: $${totalSalary}`);
 
-  totalSalary = applySeniorityBonus(totalSalary, yearsOfService);
+  if (yearsOfService >= 5) {
+    console.log(`[SYSTEM_BONUS] -> Veteran bonus milestone hit (5+ years). Adding $100.`);
+    totalSalary = totalSalary + 100;
+  } else if (yearsOfService >= 2) {
+    console.log(`[SYSTEM_BONUS] -> Standard bonus milestone hit (2+ years). Adding $40.`);
+    totalSalary = totalSalary + 40;
+  }
 
-  const insuranceCost = calculateInsuranceDeduction(healthPlanTier);
+  let insuranceCost = 0;
+  switch (healthPlanTier) {
+    case 1:
+      insuranceCost = 30;
+      break;
+    case 2:
+      insuranceCost = 60;
+      break;
+    case 3:
+      insuranceCost = 90;
+      break;
+    default:
+      insuranceCost = 0;
+  }
   totalSalary = totalSalary - insuranceCost;
-  systemLogger('DEDUCTION', 'Health Plan Tier ' + healthPlanTier + ' cost deducted: -$' + insuranceCost);
+  console.log(`[SYSTEM_DEDUCTION] -> Health Plan Tier ${healthPlanTier} cost deducted: -$${insuranceCost}`);
 
-  const finalTax = calculateTaxAmount(totalSalary);
-  systemLogger('DEDUCTION', 'Tax application completed: -$' + finalTax);
+  let finalTax = 0;
+  if (totalSalary > 1000) {
+    finalTax = totalSalary * 0.25;
+  } else if (totalSalary > 600) {
+    finalTax = totalSalary * 0.18;
+  } else {
+    finalTax = totalSalary * 0.10;
+  }
+  console.log(`[SYSTEM_DEDUCTION] -> Tax application completed: -$${finalTax}`);
 
   const netPay = totalSalary - finalTax;
-  systemLogger('SUCCESS', 'Calculation cycle finished. Net result: $' + netPay);
+  console.log(`[SYSTEM_SUCCESS] -> Calculation cycle finished. Net result: $${netPay}`);
 
   document.getElementById('net-pay-display').innerText = '$' + netPay.toFixed(2);
 });
