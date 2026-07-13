@@ -1,357 +1,74 @@
-:root {
-    --primary-color: #4f46e5;
-    --primary-hover: #4338ca;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --bg-light: #f8fafc;
-    --border-color: #e2e8f0;
-    --white: #ffffff;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-}
-
-* {
-    box-sizing: border-box;
+body {
     margin: 0;
     padding: 0;
+    font-family: Helvetica, serif;
 }
 
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: var(--text-main);
-    background-color: var(--white);
-    line-height: 1.6;
-}
-
-section {
-    padding: 80px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-h1, h2, h3 {
-    color: var(--text-main);
-    line-height: 1.2;
-    margin-bottom: 16px;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: var(--primary-hover);
-}
-
-header {
-    background-color: var(--white);
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    font-size: 20px;
-    color: var(--primary-color);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 24px; /* Clean spacing without manual margins */
-}
-
-nav a {
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: var(--primary-color);
-}
-
-#hero {
-    text-align: center;
-    padding-top: 100px;
-}
-
-#hero h1 {
-    font-size: 42px;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-}
-
-#hero p {
-    font-size: 18px;
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 32px auto;
-}
-
-.cta-btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 14px 28px;
-    border-radius: 6px;
-    font-weight: 600;
-    box-shadow: var(--shadow-md);
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.cta-btn:hover {
-    background-color: var(--primary-hover);
-    color: var(--white);
-    transform: translateY(-1px);
-}
-
-#hero figure {
-    margin-top: 60px;
-}
-
-#hero img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-}
-
-#hero figcaption {
-    margin-top: 12px;
-    font-size: 14px;
-    color: var(--text-muted);
-    font-style: italic;
-}
-
-#features {
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-}
-
-#features > p {
-    color: var(--text-muted);
-    margin-bottom: 48px;
+/* Target: All inputs, buttons and the body. */
+______ {
     font-size: 18px;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    text-align: left;
-}
-
-.features-grid article {
-    background-color: var(--bg-light);
-    padding: 32px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.features-grid article:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.features-grid h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-}
-
-.features-grid p {
-    color: var(--text-muted);
-}
-
-#testimonials {
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 48px;
-}
-
-#testimonials h2 {
-    width: 100%;
-}
-
-blockquote {
-    flex: 2;
-    min-width: 300px;
-    background-color: var(--bg-light);
-    border-left: 4px solid var(--primary-color);
-    padding: 32px;
-    border-radius: 0 8px 8px 0;
-}
-
-blockquote p {
-    font-size: 20px;
-    font-style: italic;
-    margin-bottom: 16px;
-    color: var(--text-main);
-}
-
-blockquote cite {
-    font-style: normal;
-    font-weight: 600;
-    color: var(--text-muted);
-}
-
-#testimonials aside {
-    flex: 1;
-    min-width: 250px;
-    background-color: var(--text-main);
-    color: var(--white);
-    padding: 32px;
-    border-radius: 8px;
-}
-
-#testimonials aside h3 {
-    color: var(--white);
-    margin-bottom: 20px;
-}
-
-#testimonials aside ul {
-    list-style: none;
-}
-
-#testimonials aside li {
-    margin-bottom: 16px;
-    border-bottom: 1px solid #334155;
-    padding-bottom: 12px;
-}
-
-#testimonials aside li:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-#testimonials aside strong {
-    color: var(--primary-color);
-    font-size: 22px;
-    display: block;
-}
-
-#contact {
-    border-top: 1px solid var(--border-color);
-    max-width: 600px;
-}
-
-#contact h2, #contact > p {
-    text-align: center;
-}
-
-#contact > p {
-    color: var(--text-muted);
-    margin-bottom: 40px;
-}
-
-form {
-    background-color: var(--white);
-    border: 1px solid var(--border-color);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
-}
-
-.form-group {
-    margin-bottom: 24px;
-}
-
-.form-group label {
-    display: flex;
-    flex-direction: column;
-    font-weight: 500;
-    gap: 8px;
-}
-
-input[type="text"],
-input[type="email"],
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 15px;
-    background-color: var(--bg-light);
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-}
-
-.checkbox-group label {
-    flex-direction: row;
-    align-items: center;
-    font-weight: normal;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.checkbox-group input[type="checkbox"] {
-    width: auto;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-form button[type="submit"] {
-    width: 100%;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 14px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: var(--shadow-sm);
-    transition: background-color 0.2s;
-}
-
-form button[type="submit"]:hover {
-    background-color: var(--primary-hover);
-}
-
-footer {
-    background-color: var(--bg-light);
-    border-top: 1px solid var(--border-color);
-    padding: 40px 20px;
-    text-align: center;
-    font-size: 14px;
-    color: var(--text-muted);
-}
-
-footer p {
-    margin-bottom: 16px;
-}
-
-footer ul {
-    list-style: none;
+/* Target: The container element. */
+______ {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    background-color: #cbdfea;
 }
 
-footer a {
-    color: var(--text-muted);
+/* Target: Specifically the login-modal. */
+______ {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 360px;
 }
 
-footer a:hover {
-    color: var(--primary-color);
+/* Target: All form tags on the page. */
+______ {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+}
+
+/* Target: All <p> paragraphs located inside an element with the class .card. */
+______ {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Target: Any <input> tag that has the 'required' attribute. */
+______ {
+    border: 2px solid #e74c3c;
+}
+
+/* Target: Exclusively <input> tags whose type is exactly 'password'. */
+______ {
+    letter-spacing: 5px;
+}
+
+/* Target: Only checkbox <input> tags when they are in the CHECKED state. */
+______ {
+    accent-color: #2ecc71;
+}
+
+/* Target: Only the FIRST <input> element inside the form. */
+______ {
+    background-color: #f9f9f9;
+}
+
+/* Target: <button> elements when they are NOT disabled (meaning clickable). */
+______ {
+    cursor: pointer;
+    background-color: #3498db;
+}
+
+/* Target: The placeholder text inside all input elements. */
+______ {
+    font-style: italic;
+    color: #bbb;
 }
