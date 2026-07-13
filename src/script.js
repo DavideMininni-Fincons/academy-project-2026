@@ -1,9 +1,6 @@
 /**
  * Exercise notes
  *
- * Open the style.css.
- *
- * Your dog ate the CSS selectors and now the page is broken!
- * Replace each ______ selector with the correct one following the comments.
- * DO NOT change the index file.
+ * The three card must look the same.
+ * The descriptions of the three methods contain all the information to fill the missing properties / values.
  */
