@@ -1,5 +1,28 @@
-let nextHeroId = 1;
-const heroesDatabase = {};
+/**
+ * Exercise notes
+ *
+ * The index page displays a form for heroes creation.
+ *
+ * The script here is missing the constructor function for the Hero itself
+ * and the heroesDatabase to store them (key: auto-generated id).
+ * Complete following the instruction
+ */
+
+/**
+ * Create a variable which will be used as heroes' id.
+ * Name: `nextHeroId`
+ * Type: `number`
+ */
+______
+
+/**
+ * Create a variable for storing heroes.
+ * Name: `heroesDatabase`
+ * Type: `object`
+ */
+______
+
+
 const heroForm = document.getElementById('hero-form');
 const heroesTbody = document.getElementById('heroes-tbody');
 
@@ -28,21 +51,28 @@ function renderTable() {
   });
 }
 
-function Hero(name, role, maxHp) {
-  this.name = name;
-  this.role = role;
-  this.maxHp = maxHp;
-  this.exp = 0;
-}
+/**
+ * Create a constructor function for the heroes.
+ * Name: `Hero`
+ * Properties: `name`, `role`, `maxHp`, `exp`
+ * Question: `exp` is not taken from the inputs on index, how is it set?
+ */
+______
 
-Hero.prototype.gainExp = function(amount) {
-  this.exp += amount;
-};
+/**
+ * Add the gainExp method on the `Hero`'s prototype.
+ * The function has an `amount` parameter and this value is added to the `exp`.
+ */
+______
 
-Hero.prototype.engageInCombat = function() {
-  const expGained = Math.floor(Math.random() * 15) + 5;
-  this.gainExp(expGained);
-};
+/**
+ * Add the `engageInCombat` method on the `Hero`'s prototype.
+ * The function generates a random number value and calls `gainExp`.
+ * Question: how is the method invoked?
+ *
+ */
+______
+
 
 heroForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -51,8 +81,14 @@ heroForm.addEventListener('submit', (event) => {
   const role = document.getElementById('hero-role').value;
   const maxHp = Number(document.getElementById('hero-hp').value);
 
-  heroesDatabase[nextHeroId] = new Hero(name, role, maxHp);
-  nextHeroId++;
+  /**
+   * Core logic
+   * Create the `Hero` object using the constructor function.
+   * Add the hero on the `heroesDatabase` using the `nextHeroId` as key.
+   * Remember to increase the `nextHeroId`.
+   */
+  ______
+
   heroForm.reset();
   renderTable();
 });
