@@ -1,97 +1,158 @@
 /**
  * Exercise notes
  *
- * The index page displays a form for heroes creation.
+ * The index page displays a todolist.
  *
- * The script here is missing the constructor function for the Hero itself
- * and the heroesDatabase to store them (key: auto-generated id).
- * Complete following the instruction
+ * The `currentTodos` variable holds the full list;
+ * the associated functions to sort, filter and so on are missing.
+ *
+ * Complete the code following the instructions.
  */
+let currentTodos = [];
+let taskCounter = 1;
 
-/**
- * Create a variable which will be used as heroes' id.
- * Name: `nextHeroId`
- * Type: `number`
- */
-______
+const todoTbody = document.getElementById('todo-tbody');
+const totalTimeEl = document.getElementById('total-time');
+const addPresetBtn = document.getElementById('add-preset-btn');
+const sortBtn = document.getElementById('sort-btn');
+const boostBtn = document.getElementById('boost-btn');
+const lowerBtn = document.getElementById('lower-btn');
+const filterHighCheckbox = document.getElementById('filter-high-priority');
+const statusPanel = document.getElementById('status-panel');
 
-/**
- * Create a variable for storing heroes.
- * Name: `heroesDatabase`
- * Type: `object`
- */
-______
+function generatePresetTodo() {
+  const priorities = ['Low', 'Medium', 'High'];
+  const randomHours = Math.floor(Math.random() * 5) + 1;
+  const randomPriority = priorities[Math.floor(Math.random() * priorities.length)];
 
+  const newTodo = {
+    id: Date.now(),
+    task: `Preset Task Template #${taskCounter++}`,
+    durationHours: randomHours,
+    priority: randomPriority
+  };
 
-const heroForm = document.getElementById('hero-form');
-const heroesTbody = document.getElementById('heroes-tbody');
+  currentTodos.push(newTodo);
+}
 
-function renderTable() {
-  heroesTbody.innerHTML = '';
+function deleteTodoById(id) {
+  currentTodos = currentTodos.filter(todo => todo.id !== id);
+}
 
-  Object.entries(heroesDatabase).forEach(([id, hero]) => {
-    const tr = document.createElement('tr');
-    /**
-     * In each td, add the correct hero's information, following the header on the index page.
-     */
-    tr.innerHTML = `
-      <td><strong></strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>
-        <button class="attack-btn">Attack ⚔️</button>
-      </td>
-    `;
+function sortTodosByDurationDesc() {
+  currentTodos.sort((a, b) => b.durationHours - a.durationHours);
+}
 
-    const attackBtn = tr.querySelector('.attack-btn');
-    attackBtn.addEventListener('click', () => {
-      hero.engageInCombat();
-      renderTable();
-    });
+function getHighPriorityTodos() {
+  return currentTodos.filter(todo => todo.priority === 'High');
+}
 
-    heroesTbody.appendChild(tr);
+function calculateTotalHours(todosList) {
+  return todosList.reduce((acc, todo) => acc + todo.durationHours, 0);
+}
+
+function boostPriorities() {
+  currentTodos = currentTodos.map(todo => {
+    let nextPriority = todo.priority;
+    if (todo.priority === 'Low') {
+      nextPriority = 'Medium';
+    } else if (todo.priority === 'Medium') {
+      nextPriority = 'High';
+    }
+
+    return { ...todo, priority: nextPriority };
   });
 }
 
-/**
- * Create a constructor function for the heroes.
- * Name: `Hero`
- * Properties: `name`, `role`, `maxHp`, `exp`
- * Question: `exp` is not taken from the inputs on index, how is it set?
- */
-______
+function lowerPriorities() {
+  currentTodos = currentTodos.map(todo => {
+    let nextPriority = todo.priority;
+    if (todo.priority === 'High') {
+      nextPriority = 'Medium';
+    } else if (todo.priority === 'Medium') {
+      nextPriority = 'Low';
+    }
 
-/**
- * Add the gainExp method on the `Hero`'s prototype.
- * The function has an `amount` parameter and this value is added to the `exp`.
- */
-______
+    return { ...todo, priority: nextPriority };
+  });
+}
 
-/**
- * Add the `engageInCombat` method on the `Hero`'s prototype.
- * The function generates a random number value and calls `gainExp`.
- * Question: how is the method invoked?
- *
- */
-______
+function checkOverload() {
+  return currentTodos.some(todo => todo.durationHours >= 5);
+}
 
+function checkSprintReady() {
+  return currentTodos.length > 0 && currentTodos.every(todo => todo.durationHours <= 2);
+}
 
-heroForm.addEventListener('submit', (event) => {
-  event.preventDefault();
+function updateStatusPanel() {
+  statusPanel.innerHTML = '';
 
-  const name = document.getElementById('hero-name').value;
-  const role = document.getElementById('hero-role').value;
-  const maxHp = Number(document.getElementById('hero-hp').value);
+  if (checkOverload()) {
+    const warning = document.createElement('div');
+    warning.className = 'status-badge badge-warning';
+    warning.innerText = '⚠️ Alert: You have at least one highly demanding task (5h+)!';
+    statusPanel.appendChild(warning);
+  }
 
-  /**
-   * Core logic
-   * Create the `Hero` object using the constructor function.
-   * Add the hero on the `heroesDatabase` using the `nextHeroId` as key.
-   * Remember to increase the `nextHeroId`.
-   */
-  ______
+  if (checkSprintReady()) {
+    const success = document.createElement('div');
+    success.className = 'status-badge badge-success';
+    success.innerText = '⚡ Sprint Ready: Every single task is 2 hours or less!';
+    statusPanel.appendChild(success);
+  }
+}
 
-  heroForm.reset();
-  renderTable();
+function render() {
+  todoTbody.innerHTML = '';
+
+  const tasksToDisplay = filterHighCheckbox.checked
+    ? getHighPriorityTodos()
+    : currentTodos;
+
+  tasksToDisplay.forEach(todo => {
+    const tr = document.createElement('tr');
+
+    tr.innerHTML = `
+      <td><strong>${todo.task}</strong></td>
+      <td>${todo.durationHours}h</td>
+      <td>${todo.priority}</td>
+      <td><button class="btn-delete">Delete 🗑️</button></td>
+    `;
+
+    tr.querySelector('.btn-delete').addEventListener('click', () => {
+      deleteTodoById(todo.id);
+      render();
+    });
+
+    todoTbody.appendChild(tr);
+  });
+
+  const totalHours = calculateTotalHours(tasksToDisplay);
+  totalTimeEl.innerText = `${totalHours}h`;
+  updateStatusPanel();
+}
+
+addPresetBtn.addEventListener('click', () => {
+  generatePresetTodo();
+  render();
 });
+
+sortBtn.addEventListener('click', () => {
+  sortTodosByDurationDesc();
+  render();
+});
+
+boostBtn.addEventListener('click', () => {
+  boostPriorities();
+  render();
+});
+
+lowerBtn.addEventListener('click', () => {
+  lowerPriorities();
+  render();
+});
+
+filterHighCheckbox.addEventListener('change', render);
+
+render();

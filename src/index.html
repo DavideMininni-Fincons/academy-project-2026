@@ -8,54 +8,42 @@
   <script src="./script.js" defer></script>
 </head>
 <body>
-<div class="app-container">
-  <div class="card form-card">
-    <h2>Create New Hero</h2>
-    <form id="hero-form">
-      <div class="form-group">
-        <label for="hero-name">Hero Name:</label>
-        <input type="text" id="hero-name" placeholder="e.g. Arthas" required>
+<div class="planner-container">
+  <div class="control-panel">
+    <h2>Task Engine Controls</h2>
+    <div class="controls-wrapper">
+      <div class="btn-group">
+        <button id="add-preset-btn" class="btn btn-add">Add Preset Task ⚡</button>
+        <button id="sort-btn" class="btn btn-sort">Sort by Duration ⏳</button>
+        <button id="boost-btn" class="btn btn-boost">Boost Priorities 🚀</button>
+        <button id="lower-btn" class="btn btn-lower">Lower Priorities 🧘🏻‍♂️</button>
       </div>
 
-      <div class="form-group">
-        <label for="hero-role">Class</label>
-        <select id="hero-role" required>
-          <option value="" disabled selected>Select a class...</option>
-          <option value="Warrior">Warrior 🛡️</option>
-          <option value="Mage">Mage 🔮</option>
-          <option value="Rogue">Rogue 🗡️</option>
-          <option value="Cleric">Cleric 💖</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="hero-hp">Maximum HP:</label>
-        <input type="number" id="hero-hp" min="10" max="500" placeholder="e.g. 100" required>
-      </div>
-
-      <button type="submit" id="save-btn">Save Hero 💾</button>
-    </form>
+      <label class="filter-container">
+        <input type="checkbox" id="filter-high-priority" class="custom-checkbox">
+        <span class="checkbox-box"></span>
+        Show High Priority Only ⚠️
+      </label>
+    </div>
   </div>
 
-  <div class="card table-card">
-    <h2>Heroes</h2>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-        <tr>
-          <th>Name</th>
-          <th>Class</th>
-          <th>HP Status</th>
-          <th>EXP</th>
-          <th>Action</th>
-        </tr>
-        </thead>
-        <tbody id="heroes-tbody">
-        <tr>
-          <td colspan="5">No heroes</td>
-        </tr>
-        </tbody>
-      </table>
+  <div id="status-panel" class="status-panel"></div>
+
+  <div class="table-card">
+    <table>
+      <thead>
+      <tr>
+        <th>Task Description</th>
+        <th>Duration</th>
+        <th>Priority</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody id="todo-tbody"></tbody>
+    </table>
+
+    <div class="table-footer">
+      <span>Total Time: <strong id="total-time">0h (0 min)</strong></span>
     </div>
   </div>
 </div>
