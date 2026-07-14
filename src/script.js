@@ -25,64 +25,71 @@ function generatePresetTodo() {
   const randomHours = Math.floor(Math.random() * 5) + 1;
   const randomPriority = priorities[Math.floor(Math.random() * priorities.length)];
 
-  const newTodo = {
-    id: Date.now(),
-    task: `Preset Task Template #${taskCounter++}`,
-    durationHours: randomHours,
-    priority: randomPriority
-  };
-
-  currentTodos.push(newTodo);
+  /**
+   * Create a task with properties:
+   *  - id: unique
+   *  - task: the task name; use taskCounter to count
+   *  - durationHours: use the random value above
+   *  - priority: use the random value above
+   *
+   * Add the task to the `currentTodos`.
+   */
 }
 
 function deleteTodoById(id) {
-  currentTodos = currentTodos.filter(todo => todo.id !== id);
+  /**
+   * Delete the task, filtering on the provided id.
+   */
 }
 
 function sortTodosByDurationDesc() {
-  currentTodos.sort((a, b) => b.durationHours - a.durationHours);
+  /**
+   * Sort by durationHours
+   */
 }
 
 function getHighPriorityTodos() {
-  return currentTodos.filter(todo => todo.priority === 'High');
+  /**
+   * Retrieve only the tasks with 'High' priority.
+   */
 }
 
 function calculateTotalHours(todosList) {
-  return todosList.reduce((acc, todo) => acc + todo.durationHours, 0);
+  /**
+   * Calculate the duration of all the tasks.
+   */
 }
 
 function boostPriorities() {
-  currentTodos = currentTodos.map(todo => {
-    let nextPriority = todo.priority;
-    if (todo.priority === 'Low') {
-      nextPriority = 'Medium';
-    } else if (todo.priority === 'Medium') {
-      nextPriority = 'High';
-    }
-
-    return { ...todo, priority: nextPriority };
-  });
+  /**
+   * Remap the tasks increasing their priority:
+   * Low => Medium
+   * Medium => High
+   *
+   * Remember to not override the current priority! Use temporary var and spread operator.
+   */
 }
 
 function lowerPriorities() {
-  currentTodos = currentTodos.map(todo => {
-    let nextPriority = todo.priority;
-    if (todo.priority === 'High') {
-      nextPriority = 'Medium';
-    } else if (todo.priority === 'Medium') {
-      nextPriority = 'Low';
-    }
-
-    return { ...todo, priority: nextPriority };
-  });
+  /**
+   * Remap the tasks decreasing their priority:
+   * High => Medium
+   * Medium => Low
+   *
+   * Remember to not override the current priority! Use temporary var and spread operator.
+   */
 }
 
 function checkOverload() {
-  return currentTodos.some(todo => todo.durationHours >= 5);
+  /**
+   * Return true if at least one task has duration equal or greater than 5.
+   */
 }
 
 function checkSprintReady() {
-  return currentTodos.length > 0 && currentTodos.every(todo => todo.durationHours <= 2);
+  /**
+   * Return true if at least one task and if all of them have duration equal or lower than 2.
+   */
 }
 
 function updateStatusPanel() {
