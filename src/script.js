@@ -31,11 +31,14 @@ function renderTable() {
 
   Object.entries(heroesDatabase).forEach(([id, hero]) => {
     const tr = document.createElement('tr');
+    /**
+     * In each td, add the correct hero's information, following the header on the index page.
+     */
     tr.innerHTML = `
-      <td><strong>${hero.name} <small style="color: #64748b">(ID: ${id})</small></strong></td>
-      <td>${hero.role}</td>
-      <td>${hero.maxHp}</td>
-      <td>${hero.exp}</td>
+      <td><strong></strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td>
         <button class="attack-btn">Attack ⚔️</button>
       </td>
