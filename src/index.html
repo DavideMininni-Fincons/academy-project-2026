@@ -8,45 +8,55 @@
   <script src="./script.js" defer></script>
 </head>
 <body>
-<div class="calculator-card">
-  <h2>Payroll Control Panel</h2>
+<div class="app-container">
+  <div class="card form-card">
+    <h2>Create New Hero</h2>
+    <form id="hero-form">
+      <div class="form-group">
+        <label for="hero-name">Hero Name:</label>
+        <input type="text" id="hero-name" placeholder="e.g. Arthas" required>
+      </div>
 
-  <form id="payroll-form">
-    <div class="form-group">
-      <label for="regular-hours">Regular Hours Worked:</label>
-      <input type="number" id="regular-hours" min="0" placeholder="e.g. 40" required>
+      <div class="form-group">
+        <label for="hero-role">Class</label>
+        <select id="hero-role" required>
+          <option value="" disabled selected>Select a class...</option>
+          <option value="Warrior">Warrior 🛡️</option>
+          <option value="Mage">Mage 🔮</option>
+          <option value="Rogue">Rogue 🗡️</option>
+          <option value="Cleric">Cleric 💖</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="hero-hp">Maximum HP:</label>
+        <input type="number" id="hero-hp" min="10" max="500" placeholder="e.g. 100" required>
+      </div>
+
+      <button type="submit" id="save-btn">Save Hero 💾</button>
+    </form>
+  </div>
+
+  <div class="card table-card">
+    <h2>Heroes</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Class</th>
+          <th>HP Status</th>
+          <th>EXP</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody id="heroes-tbody">
+        <tr>
+          <td colspan="5">No heroes</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-
-    <div class="form-group">
-      <label for="overtime-hours">Overtime Hours Worked:</label>
-      <input type="number" id="overtime-hours" min="0" placeholder="e.g. 8" required>
-    </div>
-
-    <div class="form-group">
-      <label for="holiday-hours">Holiday Hours Worked:</label>
-      <input type="number" id="holiday-hours" min="0" placeholder="e.g. 6" required>
-    </div>
-
-    <div class="form-group">
-      <label for="years-of-service">Years of Service:</label>
-      <input type="number" id="years-of-service" min="0" placeholder="e.g. 5" required>
-    </div>
-
-    <div class="form-group">
-      <label for="health-tier">Health Insurance Tier:</label>
-      <select id="health-tier" required>
-        <option value="" disabled selected>Choose a tier...</option>
-        <option value="1">Tier 1 ($30)</option>
-        <option value="2">Tier 2 ($60)</option>
-        <option value="3">Tier 3 ($90)</option>
-      </select>
-    </div>
-
-    <button type="submit" id="calculate-btn">Process Payroll 💸</button>
-  </form>
-
-  <div class="result-box">
-    <p>Final Net Payout: <strong id="net-pay-display">$0.00</strong></p>
   </div>
 </div>
 </body>

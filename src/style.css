@@ -2,28 +2,39 @@ body {
     font-family: system-ui, -apple-system, sans-serif;
     background-color: #0f172a;
     color: #f8fafc;
+    margin: 0;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
 }
 
-.calculator-card {
+.app-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card {
     background: #1e293b;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
-    width: 100%;
     border: 1px solid #334155;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.form-card {
+    flex: 1 1 320px;
+}
+
+.table-card {
+    flex: 2 1 600px;
 }
 
 h2 {
     margin-top: 0;
     font-size: 20px;
-    text-align: center;
     color: #38bdf8;
     margin-bottom: 20px;
 }
@@ -40,18 +51,34 @@ label {
     color: #94a3b8;
 }
 
-/* Added select styling here to match inputs */
 input, select {
-    padding: 10px;
+    padding: 10px 12px;
     background-color: #0f172a;
     border: 1px solid #334155;
     border-radius: 6px;
     color: white;
     font-size: 16px;
     outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Fixes look for modern select elements on some browsers */
+input:focus, select:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
 select option {
     background-color: #1e293b;
     color: white;
@@ -67,28 +94,45 @@ button {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    transition: background 0.2s;
 }
 
 button:hover {
     background-color: #0284c7;
 }
 
-.result-box {
-    margin-top: 20px;
-    padding: 12px;
-    background-color: #0f172a;
-    border-radius: 6px;
-    text-align: center;
-    border: 1px solid #334155;
+.table-wrapper {
+    overflow-x: auto;
 }
 
-.result-box p {
-    margin: 0;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #334155;
+}
+
+th {
     color: #94a3b8;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
-#net-pay-display {
-    color: #22c55e;
-    font-size: 20px;
+td {
+    font-size: 15px;
+}
+
+.attack-btn {
+    background-color: #ef4444;
+    padding: 6px 12px;
+    font-size: 13px;
+    width: auto;
+}
+
+.attack-btn:hover {
+    background-color: #dc2626;
 }
