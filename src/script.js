@@ -5,7 +5,7 @@
  *
  * The script here is missing the constructor function for the Hero itself
  * and the heroesDatabase to store them (key: auto-generated id).
- * Complete following the instruction
+ * Complete following the instructions.
  */
 
 /**
