@@ -3,7 +3,7 @@ import { BeerCardComponent } from '../beer-card/beer-card.component';
 import { BeerService } from '../service/beer.service';
 import { Beer } from '../model/beer-model';
 import { AsyncPipe } from '@angular/common';
-import { catchError, map, Observable, of, tap } from 'rxjs';
+import { catchError, Observable, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-beer-list',
