@@ -4,6 +4,7 @@ import { BeerService } from '../service/beer.service';
 import { Beer } from '../model/beer-model';
 import { AsyncPipe } from '@angular/common';
 import { catchError, map, Observable, of, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-beer-list',
@@ -13,6 +14,7 @@ import { catchError, map, Observable, of, tap } from 'rxjs';
 })
 export class BeerListComponent {
   private beerService = inject(BeerService);
+  private router = inject(Router);
   protected beers: Beer[] = [];
 
   // Async Pipe
@@ -83,5 +85,9 @@ export class BeerListComponent {
           console.error('Update error', error);
         }
       });
+  }
+
+  protected goToNewBeer(): void {
+    this.router.navigate(['/beers/new']);
   }
 }

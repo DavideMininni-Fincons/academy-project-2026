@@ -20,8 +20,14 @@ export class BeerService {
   }
 
   addBeer(beer: Beer): Observable<Beer> {
-    return this.http.post<Beer>(this.BASE_URL, beer);
-  }
+  const newBeer: Beer = {
+    ...beer,
+    createdDate: new Date(),
+    lastModifiedDate: new Date(),
+  };
+
+  return this.http.post<Beer>(this.BASE_URL, newBeer);
+}
 
   editBeer(beer: Beer): Observable<Beer> {
     return this.http.put<Beer>(

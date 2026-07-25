@@ -1,6 +1,6 @@
 <div class="title-bar">
   <h2>Beer List</h2>
-  <button>+ Add New</button>
+  <button (click)="goToNewBeer()">+ Add New</button>
 </div>
 <div class="card-container">
   @for (beer of beers$ | async; track beer.beerId) {

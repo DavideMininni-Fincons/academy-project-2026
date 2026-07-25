@@ -1,0 +1,62 @@
+<div class="new-beer-container">
+  <div class="title-bar">
+    <h2>Add New Beer</h2>
+  </div>
+
+  <form class="beer-form-card" [formGroup]="beerForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label>Name <span class="required">*</span></label>
+
+      <input type="text" formControlName="beerName"
+             [class.invalid]="beerForm.controls.beerName.invalid && beerForm.controls.beerName.touched">
+
+      @if (beerForm.controls.beerName.hasError('required') && beerForm.controls.beerName.touched) {
+        <span class="error">Name is required</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Style <span class="required">*</span></label>
+
+      <input type="text" formControlName="beerStyle"
+             [class.invalid]="beerForm.controls.beerStyle.invalid && beerForm.controls.beerStyle.touched">
+
+      @if (beerForm.controls.beerStyle.hasError('required') && beerForm.controls.beerStyle.touched) {
+        <span class="error">Style is required</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>UPC</label>
+      <input type="text" formControlName="upc">
+    </div>
+
+    <div class="form-group">
+      <label>Price<span class="required">*</span></label>
+
+      <input type="number" formControlName="price"
+             [class.invalid]="beerForm.controls.price.invalid && beerForm.controls.price.touched">
+
+      @if (beerForm.controls.price.hasError('min') && beerForm.controls.price.touched) {
+        <span class="error">Price is required and must not be less than 1</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Quantity<span class="required">*</span></label>
+
+      <input type="number" formControlName="quantityOnHand"
+             [class.invalid]="beerForm.controls.quantityOnHand.invalid && beerForm.controls.quantityOnHand.touched">
+
+      @if (beerForm.controls.quantityOnHand.hasError('min') && beerForm.controls.quantityOnHand.touched) {
+        <span class="error">Quantity is required and must not be less than 1</span>
+      }
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-save" type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
