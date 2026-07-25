@@ -21,14 +21,14 @@ export class BeerListComponent {
   protected beers$: Observable<Beer[]> = this.beerService.getBeers();
 
   ngOnInit(): void {
-    this.beerService.getBeers().subscribe({
-      next: (beers) => {
-        this.beers = beers;
-      },
-      error: (error) => {
-        console.error('Error loading beers', error);
-      },
-    });
+    // this.beerService.getBeers().subscribe({
+    //   next: (beers) => {
+    //     this.beers = beers;
+    //   },
+    //   error: (error) => {
+    //     console.error('Error loading beers', error);
+    //   },
+    // });
   }
 
   // RxJS operators: tap + map + catchError
