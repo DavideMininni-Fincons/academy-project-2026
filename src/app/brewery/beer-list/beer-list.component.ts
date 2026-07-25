@@ -1,19 +1,87 @@
 import { Component, inject } from '@angular/core';
 import { BeerCardComponent } from '../beer-card/beer-card.component';
 import { BeerService } from '../service/beer.service';
+import { Beer } from '../model/beer-model';
+import { AsyncPipe } from '@angular/common';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-beer-list',
   templateUrl: './beer-list.component.html',
   styleUrl: './beer-list.component.scss',
-  imports: [BeerCardComponent],
+  imports: [BeerCardComponent, AsyncPipe],
 })
 export class BeerListComponent {
-  private beerService: BeerService = inject(BeerService);
+  private beerService = inject(BeerService);
+  protected beers: Beer[] = [];
 
-  protected beers = this.beerService.getBeers();
+  // Async Pipe
+  protected beers$: Observable<Beer[]> = this.beerService.getBeers();
 
-  protected deleteBeer(beerId: number) {
-    this.beerService.deleteBeer(beerId);
+  ngOnInit(): void {
+    this.beerService.getBeers().subscribe({
+      next: (beers) => {
+        this.beers = beers;
+      },
+      error: (error) => {
+        console.error('Error loading beers', error);
+      },
+    });
+  }
+
+  // RxJS operators: tap + map + catchError
+  protected loadBeerById(id: number): void {
+    this.beerService.getBeerById(id)
+      .pipe(
+        tap(() => console.log('Loading beer...')),
+
+        map(beer => ({
+          ...beer,
+          beerName: beer.beerName.toUpperCase()
+        })),
+
+        catchError(error => {
+          console.error('Error loading beer', error);
+          return of(undefined);
+        })
+      )
+      .subscribe();
+  }
+
+  protected deleteBeer(beerId: number): void {
+    this.beerService.deleteBeer(beerId)
+      .subscribe({
+        next: () => {
+          console.log('Beer deleted');
+          this.beers$ = this.beerService.getBeers();
+        },
+        error: (error) => {
+          console.error('Delete error', error);
+        }
+      });
+  }
+
+  protected addBeer(beer: Beer): void {
+    this.beerService.addBeer(beer)
+      .subscribe({
+        next: () => {
+          this.beers$ = this.beerService.getBeers();
+        },
+        error: (error) => {
+          console.error('Create error', error);
+        }
+      });
+  }
+
+  protected editBeer(beer: Beer): void {
+    this.beerService.editBeer(beer)
+      .subscribe({
+        next: () => {
+          this.beers$ = this.beerService.getBeers();
+        },
+        error: (error) => {
+          console.error('Update error', error);
+        }
+      });
   }
 }

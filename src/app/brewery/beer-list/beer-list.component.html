@@ -3,7 +3,7 @@
   <button>+ Add New</button>
 </div>
 <div class="card-container">
-  @for (beer of beers; track beer.beerId) {
+  @for (beer of beers$ | async; track beer.beerId) {
     <app-beer-card
       [id]="beer.beerId"
       [name]="beer.beerName"

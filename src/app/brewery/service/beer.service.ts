@@ -1,28 +1,36 @@
-import { Injectable } from '@angular/core';
-import { BeersData } from '../model/beer-data';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Beer } from '../model/beer-model';
-
-let BeerId = 50;
 
 @Injectable({
   providedIn: 'root',
 })
 export class BeerService {
-  private beers = BeersData;
+  private readonly http = inject(HttpClient);
 
-  getBeers(): Array<Beer> {
-    return this.beers;
+  private readonly BASE_URL = 'http://localhost:3000/beers';
+
+  getBeers(): Observable<Beer[]> {
+    return this.http.get<Beer[]>(this.BASE_URL);
   }
 
-  addBeer(beer: Beer): void {
-    beer.beerId = BeerId++;
-    this.beers.push(beer);
+  getBeerById(id: number): Observable<Beer> {
+    return this.http.get<Beer>(`${this.BASE_URL}/${id}`);
   }
 
-  deleteBeer(beerId: number): void {
-    const index = this.beers.findIndex((b) => b.beerId === beerId);
-    if (index !== -1) {
-      this.beers.splice(index, 1);
-    }
+  addBeer(beer: Beer): Observable<Beer> {
+    return this.http.post<Beer>(this.BASE_URL, beer);
+  }
+
+  editBeer(beer: Beer): Observable<Beer> {
+    return this.http.put<Beer>(
+      `${this.BASE_URL}/${beer.beerId}`,
+      beer
+    );
+  }
+
+  deleteBeer(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.BASE_URL}/${id}`);
   }
 }
