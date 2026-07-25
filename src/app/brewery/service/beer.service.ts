@@ -24,10 +24,7 @@ export class BeerService {
   }
 
   editBeer(beer: Beer): Observable<Beer> {
-    return this.http.put<Beer>(
-      `${this.BASE_URL}/${beer.beerId}`,
-      beer
-    );
+    return this.http.put<Beer>(`${this.BASE_URL}/${beer.beerId}`, beer);
   }
 
   deleteBeer(id: number): Observable<void> {
