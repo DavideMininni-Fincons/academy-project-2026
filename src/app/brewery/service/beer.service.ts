@@ -5,7 +5,7 @@ import { Beer } from '../model/beer-model';
 let BeerId = 50;
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class BeerService {
   private beers = BeersData;
