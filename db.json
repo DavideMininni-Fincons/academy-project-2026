@@ -1,23 +1,23 @@
 {
   "beers": [
     {
-      "beerName": "Mango Bobs23",
+      "beerName": "Mango Bobs",
       "beerStyle": "ALE",
       "upc": "0631234200036",
       "price": 93.13,
       "quantityOnHand": 10,
+      "createdDate": "2022-05-07T07:35:39.000Z",
+      "lastModifiedDate": "2022-05-07T07:35:59.000Z",
       "beerId": 1
     },
     {
+      "beerName": "Galaxy Catee",
+      "beerStyle": "PALE_ALE1",
+      "upc": "91220893643691",
+      "price": 127.491,
+      "quantityOnHand": 201,
       "beerId": 2,
-      "beerName": "Galaxy Cat",
-      "beerStyle": "PALE_ALE",
-      "upc": "9122089364369",
-      "price": 27.49,
-      "quantityOnHand": 20,
-      "createdDate": "2022-05-07T07:34:39.000Z",
-      "lastModifiedDate": "2022-05-07T07:34:39.000Z",
-      "version": 1
+      "lastModifiedDate": "2026-07-25T19:49:21.097Z"
     },
     {
       "beerId": 3,
@@ -84,6 +84,15 @@
       "createdDate": "2022-05-07T07:34:39.000Z",
       "lastModifiedDate": "2022-05-07T07:34:39.000Z",
       "version": 1
+    },
+    {
+      "beerName": "13",
+      "beerStyle": "12",
+      "upc": "12",
+      "price": 12,
+      "quantityOnHand": 12,
+      "beerId": 9,
+      "lastModifiedDate": "2026-07-25T19:46:38.859Z"
     }
   ]
 }
