@@ -37,7 +37,7 @@
       <input type="number" formControlName="price"
              [class.invalid]="beerForm.controls.price.invalid && beerForm.controls.price.touched">
 
-      @if (beerForm.controls.price.hasError('min') && beerForm.controls.price.touched) {
+      @if (!beerForm.controls.price.valid && beerForm.controls.price.touched) {
         <span class="error">Price is required and must not be less than 1</span>
       }
     </div>
@@ -48,7 +48,7 @@
       <input type="number" formControlName="quantityOnHand"
              [class.invalid]="beerForm.controls.quantityOnHand.invalid && beerForm.controls.quantityOnHand.touched">
 
-      @if (beerForm.controls.quantityOnHand.hasError('min') && beerForm.controls.quantityOnHand.touched) {
+      @if (!beerForm.controls.quantityOnHand.valid && beerForm.controls.quantityOnHand.touched) {
         <span class="error">Quantity is required and must not be less than 1</span>
       }
     </div>

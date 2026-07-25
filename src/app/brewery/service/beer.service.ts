@@ -20,20 +20,11 @@ export class BeerService {
   }
 
   addBeer(beer: Beer): Observable<Beer> {
-  const newBeer: Beer = {
-    ...beer,
-    createdDate: new Date(),
-    lastModifiedDate: new Date(),
-  };
-
-  return this.http.post<Beer>(this.BASE_URL, newBeer);
+  return this.http.post<Beer>(this.BASE_URL, beer);
 }
 
   editBeer(beer: Beer): Observable<Beer> {
-    return this.http.put<Beer>(
-      `${this.BASE_URL}/${beer.beerId}`,
-      beer
-    );
+    return this.http.put<Beer>(`${this.BASE_URL}/${beer.beerId}`, beer);
   }
 
   deleteBeer(id: number): Observable<void> {

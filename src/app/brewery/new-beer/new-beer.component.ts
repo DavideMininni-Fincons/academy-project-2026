@@ -31,7 +31,13 @@ export class NewBeerComponent {
       return;
     }
 
-    this.beerService.addBeer(this.beerForm.value as Beer)
+    const newBeer: Beer = {
+      ...this.beerForm.value as Beer,
+      createdDate: new Date(),
+      lastModifiedDate: new Date()
+    };
+
+    this.beerService.addBeer(newBeer)
       .subscribe({
         next: () => {
           this.router.navigate(['/beers']);
