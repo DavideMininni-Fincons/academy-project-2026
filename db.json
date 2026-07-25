@@ -1,15 +1,16 @@
 {
   "beers": [
     {
-      "beerName": "Mango Bobs23",
+      "beerName": "Mango Bobs",
       "beerStyle": "ALE",
       "upc": "0631234200036",
       "price": 93.13,
       "quantityOnHand": 10,
+      "createdDate": "2022-05-07T07:35:39.000Z",
+      "lastModifiedDate": "2022-05-07T07:35:59.000Z",
       "beerId": 1
     },
     {
-      "beerId": 2,
       "beerName": "Galaxy Cat",
       "beerStyle": "PALE_ALE",
       "upc": "9122089364369",
