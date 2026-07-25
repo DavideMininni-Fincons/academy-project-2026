@@ -6,5 +6,11 @@ export const routes: Routes = [
   ...LESSON_ROUTES,
   { path: 'beers', component: BeerListComponent },
   { path: '', redirectTo: 'beers', pathMatch: 'full' },
-  { path: '**', redirectTo: 'beers' }
+  { path: '**', redirectTo: 'beers' },
+  // {
+  //   path: 'beers',
+  //   loadComponent: () =>
+  //     import('./brewery/beer-list/beer-list.component')
+  //       .then(c => c.BeerListComponent),
+  // }
 ];
