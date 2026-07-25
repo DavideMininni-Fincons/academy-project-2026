@@ -15,12 +15,7 @@ export class BeerCardComponent {
   @Input() upc: string = '';
   @Input() lastModifiedDate: Date = new Date();
 
-  @Output() editClick = new EventEmitter();
   @Output() deleteClick = new EventEmitter<number>();
-
-  public onButtonClick() {
-    this.editClick.emit();
-  }
 
   public onDeleteClick() {
     this.deleteClick.emit(this.id);

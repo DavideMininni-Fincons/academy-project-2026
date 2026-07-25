@@ -1,19 +1,17 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { BeerCardComponent } from '../beer-card/beer-card.component';
-import { BeerService } from '../service/beer.service';
+import { BeersData } from '../model/beer-data';
 
 @Component({
   selector: 'app-beer-list',
   templateUrl: './beer-list.component.html',
   styleUrl: './beer-list.component.scss',
-  imports: [BeerCardComponent],
+  imports: [BeerCardComponent]
 })
 export class BeerListComponent {
-  private beerService: BeerService = inject(BeerService);
+  beers = BeersData;
 
-  protected beers = this.beerService.getBeers();
-
-  protected deleteBeer(beerId: number) {
-    this.beerService.deleteBeer(beerId);
+  protected deleteBeer(beerId: number): void {
+    this.beers = this.beers.filter(beer => beer.beerId !== beerId);
   }
 }
