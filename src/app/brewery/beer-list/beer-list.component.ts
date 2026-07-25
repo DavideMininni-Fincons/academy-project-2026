@@ -75,19 +75,11 @@ export class BeerListComponent {
       });
   }
 
-  protected editBeer(beer: Beer): void {
-    this.beerService.editBeer(beer)
-      .subscribe({
-        next: () => {
-          this.beers$ = this.beerService.getBeers();
-        },
-        error: (error) => {
-          console.error('Update error', error);
-        }
-      });
-  }
-
   protected goToNewBeer(): void {
     this.router.navigate(['/beers/new']);
+  }
+
+  protected editBeer(beerId: number): void {
+    this.router.navigate(['/beers', beerId, 'edit']);
   }
 }

@@ -11,6 +11,7 @@
       [lastModifiedDate]="beer.lastModifiedDate"
       [upc]="beer.upc"
       [price]="beer.price"
+      (editClick)="editBeer($event)"
       (deleteClick)="deleteBeer($event)"
     />
   }

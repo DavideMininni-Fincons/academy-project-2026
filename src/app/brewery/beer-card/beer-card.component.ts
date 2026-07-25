@@ -8,18 +8,18 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
   imports: [CurrencyPipe, DatePipe]
 })
 export class BeerCardComponent {
-  @Input() id: number = 0;
+  @Input() id: number | undefined = 0;
   @Input() name: string = '';
   @Input() style: string = '';
   @Input() price: number = 0;
-  @Input() upc: string = '';
-  @Input() lastModifiedDate: Date = new Date();
+  @Input() upc: string | undefined = '';
+  @Input() lastModifiedDate: Date | undefined = new Date();
 
-  @Output() editClick = new EventEmitter();
+  @Output() editClick = new EventEmitter<number>();
   @Output() deleteClick = new EventEmitter<number>();
 
-  public onButtonClick() {
-    this.editClick.emit();
+  public onEditClick() {
+    this.editClick.emit(this.id);
   }
 
   public onDeleteClick() {

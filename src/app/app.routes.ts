@@ -7,6 +7,7 @@ export const routes: Routes = [
   ...LESSON_ROUTES,
   { path: 'beers', component: BeerListComponent },
   { path: 'beers/new', component: NewBeerComponent },
+  { path: 'beers/:id/edit', component: NewBeerComponent, },
   { path: '', redirectTo: 'beers', pathMatch: 'full' },
   { path: '**', redirectTo: 'beers' },
   // {
