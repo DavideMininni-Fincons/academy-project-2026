@@ -4,5 +4,7 @@ import { BeerListComponent } from './brewery/beer-list/beer-list.component';
 
 export const routes: Routes = [
   ...LESSON_ROUTES,
-  { path: '', component: BeerListComponent }
+  { path: 'beers', component: BeerListComponent },
+  { path: '', redirectTo: 'beers', pathMatch: 'full' },
+  { path: '**', redirectTo: 'beers' }
 ];
